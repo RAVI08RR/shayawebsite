@@ -1,0 +1,57 @@
+@import './tailwind.css';
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Marcellus&display=swap');
+
+body {
+  font-family: 'Marcellus', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+.btn-download-catelog {
+  width: 167px;
+}
+.catelog-heading {
+  font-size: 20px !important;
+}
+
+.bg-testimonail {
+  background-color: black;
+  padding: 35px;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  cursor: pointer;
+  color: white;
+  background-color: white;
+  position: relative;
+}
+
+.slider-flex-box {
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Marcellus', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-flex-box {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+  .mb-margin {
+    margin: 1rem;
+  }
+}

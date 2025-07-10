@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --bg-overlay-1: #0000004c;
+    --bg-dark-1: #020202;
+    --bg-dark-2: #0d0d0d;
+    --bg-green-1: #0e4e14;
+    --bg-green-overlay: #0e4e144c;
+    --bg-dark-3: #131313;
+    --bg-dark-4: #151515;
+    --bg-light-green: #edf7ee;
+    --bg-light-gray: #f5f3f3;
+    --bg-white: #ffffff;
+    --bg-white-overlay-1: #ffffff66;
+    --bg-white-overlay-2: #ffffffa3;
+
+    /* Text Colors */
+    --text-green: #0e4e14;
+    --text-dark-1: #191919;
+    --text-dark-2: #1b1b1b;
+    --text-dark-3: #1f1f1f;
+    --text-dark-4: #212121;
+    --text-dark-5: #2c2c2c;
+    --text-dark-6: #2d2d2d;
+    --text-dark-7: #2f2f2f;
+    --text-dark-8: #303030;
+    --text-dark-9: #343434;
+    --text-dark-10: #383838;
+    --text-dark-11: #393939;
+    --text-dark-12: #404040;
+    --text-gray-1: #5c5c5c;
+    --text-gray-2: #6b6b6b;
+    --text-gray-3: #808080;
+    --text-gray-4: #848181;
+    --text-gray-5: #b0afb4;
+    --text-gray-6: #b9b9b9;
+    --text-white: #ffffff;
+
+    /* Button Colors */
+    --button-bg: #121212;
+
+    /* Slider Colors */
+    --slider-bg: #ffffffb2;
+    --slider-text: #333333;
+  }
+}
+
+@layer utilities {
+  /* Background Colors */
+  .bg-overlay-1 {
+    background-color: var(--bg-overlay-1);
+  }
+  .bg-dark-1 {
+    background-color: var(--bg-dark-1);
+  }
+  .bg-dark-2 {
+    background-color: var(--bg-dark-2);
+  }
+  .bg-green-1 {
+    background-color: var(--bg-green-1);
+  }
+  .bg-green-overlay {
+    background-color: var(--bg-green-overlay);
+  }
+  .bg-dark-3 {
+    background-color: var(--bg-dark-3);
+  }
+  .bg-dark-4 {
+    background-color: var(--bg-dark-4);
+  }
+  .bg-light-green {
+    background-color: var(--bg-light-green);
+  }
+  .bg-light-gray {
+    background-color: var(--bg-light-gray);
+  }
+  .bg-white {
+    background-color: var(--bg-white);
+  }
+  .bg-white-overlay-1 {
+    background-color: var(--bg-white-overlay-1);
+  }
+  .bg-white-overlay-2 {
+    background-color: var(--bg-white-overlay-2);
+  }
+
+  /* Text Colors */
+  .text-green {
+    color: var(--text-green);
+  }
+  .text-dark-1 {
+    color: var(--text-dark-1);
+  }
+  .text-dark-2 {
+    color: var(--text-dark-2);
+  }
+  .text-dark-3 {
+    color: var(--text-dark-3);
+  }
+  .text-dark-4 {
+    color: var(--text-dark-4);
+  }
+  .text-dark-5 {
+    color: var(--text-dark-5);
+  }
+  .text-dark-6 {
+    color: var(--text-dark-6);
+  }
+  .text-dark-7 {
+    color: var(--text-dark-7);
+  }
+  .text-dark-8 {
+    color: var(--text-dark-8);
+  }
+  .text-dark-9 {
+    color: var(--text-dark-9);
+  }
+  .text-dark-10 {
+    color: var(--text-dark-10);
+  }
+  .text-dark-11 {
+    color: var(--text-dark-11);
+  }
+  .text-dark-12 {
+    color: var(--text-dark-12);
+  }
+  .text-gray-1 {
+    color: var(--text-gray-1);
+  }
+  .text-gray-2 {
+    color: var(--text-gray-2);
+  }
+  .text-gray-3 {
+    color: var(--text-gray-3);
+  }
+  .text-gray-4 {
+    color: var(--text-gray-4);
+  }
+  .text-gray-5 {
+    color: var(--text-gray-5);
+  }
+  .text-gray-6 {
+    color: var(--text-gray-6);
+  }
+  .text-white {
+    color: var(--text-white);
+  }
+
+  /* Button Colors */
+  .bg-button {
+    background-color: var(--button-bg);
+  }
+
+  /* Slider Colors */
+  .bg-slider {
+    background-color: var(--slider-bg);
+  }
+  .text-slider {
+    color: var(--slider-text);
+  }
+}
