@@ -15,8 +15,10 @@ import IlluminatingInteriorsSection from './IlluminatingInteriorsSection';
 import ModernLightingDubaiSection from './ModernLightingDubaiSection';
 import ProcessSection from './ProcessSection';
 import TestimonialSection from './TestimonialSection';
+import SVGLoader from '../../components/SVGLoader';
 
 const HomePage = () => {
+  const [loading, setLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -109,6 +111,19 @@ const HomePage = () => {
     '/images/img_certification_o.png',
     '/images/img_download_removebg_preview.png',
   ];
+
+  // Hide loader after 2 seconds
+  const handleLoaderComplete = () => {
+    setTimeout(() => setLoading(false), 300);
+  };
+
+  if (loading) {
+    return (
+      <div className="w-full h-screen fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
+        <SVGLoader duration={2000} onComplete={handleLoaderComplete} />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white">

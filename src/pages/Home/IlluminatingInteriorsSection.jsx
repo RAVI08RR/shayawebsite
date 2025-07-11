@@ -109,7 +109,7 @@ const IlluminatingInteriorsSection = ({ projects }) => {
                 <p className="text-xl font-lexend font-light leading-tight lg:leading-[25px] text-text-dark-8">
                   {project.type}
                 </p>
-                <h3 className="text-2xl lg:text-[32px] font-lexend font-normal leading-tight lg:leading-[40px] text-text-dark-2">
+                <h3 className="text-2xl lg:text-[25px] font-lexend font-normal leading-tight lg:leading-[40px] text-text-dark-2">
                   {project.title}
                 </h3>
               </div>

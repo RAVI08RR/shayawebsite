@@ -98,6 +98,8 @@ h6 {
   }
   .bg-testimonials {
     background-image: url('../../public/images/bg-testimonial.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .custom-gradient-text {
     background: linear-gradient(

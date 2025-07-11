@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from './ui/Button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,19 +26,19 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <span className="text-base sm:text-lg font-medium text-text-dark-3 font-lexend">
-              ABOUT
+            <span className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend">
+              <Link to="/about">ABOUT</Link>
             </span>
-            <span className="text-base sm:text-lg font-medium text-text-dark-3 font-lexend">
+            <span className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend">
               PRODUCTS
             </span>
-            <span className="text-base sm:text-lg font-medium text-text-dark-3 font-lexend">
+            <span className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend">
               PROJECTS
             </span>
-            <span className="text-base sm:text-lg font-medium text-text-dark-3 font-lexend">
+            <span className="lg:text-[18px] sm:text-lg font-medium text-text-dark-3 font-lexend">
               BLOG
             </span>
-            <Button className="bg-button text-white rounded-[22px] px-6 sm:px-7 py-2 text-base sm:text-lg font-medium font-lexend">
+            <Button className="lg:text-[16px] bg-button text-white rounded-[22px] px-6 sm:px-7 py-2 text-base sm:text-lg font-medium font-lexend">
               GET A FREE CONSULTATION
             </Button>
           </nav>
