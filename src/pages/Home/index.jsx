@@ -112,7 +112,7 @@ const HomePage = () => {
 
   return (
     <div className="bg-white">
-      <Header />
+      {/* <Header /> */}
       {/* Hero Section */}
       <HeroSlider />
 
@@ -141,7 +141,7 @@ const HomePage = () => {
       <TestimonialSection />
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

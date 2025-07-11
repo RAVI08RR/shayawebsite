@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// Import page components
+import Layout from './components/Layout';
 import HomePage from './pages/Home';
 
-const AppRoutes = () => {
-  return (
-    <Router>
+const AppRoutes = () => (
+  <Router>
+    <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        {/* Add other routes here */}
       </Routes>
-    </Router>
-  );
-};
+    </Layout>
+  </Router>
+);
 
 export default AppRoutes;

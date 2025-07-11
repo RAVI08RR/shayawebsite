@@ -24,8 +24,9 @@ const FeaturedProduct = () => {
           <div className="block sm:hidden">
             <Swiper
               modules={[Pagination]}
-              spaceBetween={16}
-              slidesPerView={1.1}
+              spaceBetween={15}
+              slidesPerView={1.2}
+              centeredSlides={true}
               pagination={{ clickable: true }}
               className="pb-8"
             >

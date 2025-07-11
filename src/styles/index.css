@@ -52,6 +52,22 @@ h6 {
     gap: 10px;
     align-items: flex-start;
   }
+
+  .custom-gradient-text {
+    background: linear-gradient(
+      105.06deg,
+      #ffffff 26.47%,
+      #aeaeae 31.74%,
+      #d1d1d1 42.3%,
+      #e0e0e0 48.42%,
+      #4b4b4b 52.68%,
+      #ffffff 57.1%,
+      #ffffff 61.87%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 57px !important;
+  }
   .mb-margin {
     margin: 1rem;
   }
@@ -83,6 +99,21 @@ h6 {
   .bg-testimonials {
     background-image: url('../../public/images/bg-testimonial.jpg');
   }
+  .custom-gradient-text {
+    background: linear-gradient(
+      105.06deg,
+      #ffffff 26.47%,
+      #aeaeae 31.74%,
+      #d1d1d1 42.3%,
+      #e0e0e0 48.42%,
+      #4b4b4b 52.68%,
+      #ffffff 57.1%,
+      #ffffff 61.87%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 86px !important;
+  }
 }
 
 .slider-flex-box {
@@ -91,21 +122,7 @@ h6 {
   align-items: flex-start;
   font-family: 'Lexend';
 }
-.custom-gradient-text {
-  background: linear-gradient(
-    105.06deg,
-    #ffffff 26.47%,
-    #aeaeae 31.74%,
-    #d1d1d1 42.3%,
-    #e0e0e0 48.42%,
-    #4b4b4b 52.68%,
-    #ffffff 57.1%,
-    #ffffff 61.87%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 86px !important;
-}
+
 .counter-box p {
   font-size: 16px !important;
 }
