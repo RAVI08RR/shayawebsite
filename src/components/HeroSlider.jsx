@@ -51,7 +51,7 @@ const HeroSlider = () => {
 
               {/* Heading Text (top-right) */}
               <div className="text-center pt-10">
-                <h1 className="text-white text-5xl lg:text-7xl font-light leading-[1.2] tracking-wide whitespace-pre-line">
+                <h1 className="text-white text-5xl lg:text-7xl font-light leading-[1.2] tracking-wide whitespace-pre-line custom-gradient-text">
                   INSPIRED <span className="font-semibold">SIGNATURE</span>
                   {'\n'}
                   LIGHTING <span className="font-semibold">AMBIENCE.</span>
@@ -65,7 +65,10 @@ const HeroSlider = () => {
       {/* Content Card */}
       <div className="absolute bottom-6 lg:right-6 bg-white rounded-xl shadow-2xl w-auto lg:w-[480px] overflow-hidden m-auto sm:m-10 mb-margin">
         <div className="flex justify-between p-4 gap-2">
-          <h2 className="text-green-900 text-lg font-semibold  leading-snug">
+          <h2
+            className="text-green-900 text-lg font-semibold  leading-snug "
+            style={{ fontSize: '20px' }}
+          >
             {slides[currentSlide].title}
           </h2>
 
@@ -98,7 +101,7 @@ const HeroSlider = () => {
       </div>
 
       {/* Arrows */}
-      <button
+      {/* <button
         onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
         className="absolute left-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/30 hover:bg-white/40 backdrop-blur-sm rounded-full flex items-center justify-center text-white"
       >
@@ -114,7 +117,7 @@ const HeroSlider = () => {
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-      </button>
+      </button> */}
     </section>
   );
 };

@@ -6,19 +6,19 @@ const StatsSection = () => {
       <div className="w-full lg:max-w-[1790px] mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-0">
           <div className="w-full lg:w-[34%]">
-            <h2 className="text-3xl sm:text-4xl lg:text-[60px] font-marcellus font-normal leading-tight lg:leading-[64px] text-text-dark-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-[55px] font-marcellus font-normal leading-tight lg:leading-[64px] text-text-dark-4">
               Trusted Numbers, Timeless Light
             </h2>
           </div>
 
-          <div className="w-full lg:w-[44%] bg-light-green rounded-[10px] p-4 sm:p-5 lg:p-[18px]">
+          <div className="w-full lg:w-[44%] bg-light-green rounded-[10px] p-4 sm:p-5 lg:p-[18px] counter-box">
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-[32px]">
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-[32px] flex-1">
                 <div className="flex-1">
                   <h3 className="text-2xl sm:text-3xl lg:text-[30px]  font-lexend font-normal leading-tight lg:leading-[53px] text-text-green uppercase text-center sm:text-left">
                     60,000+
                   </h3>
-                  <p className="text-base sm:text-lg font-lexend font-light leading-tight lg:leading-[18px] text-text-dark-12 mt-1 sm:mt-2 text-center sm:text-left">
+                  <p className="text-base sm:text-lg font-lexend font-light leading-tight lg:leading-[16px] text-text-dark-12 mt-1 sm:mt-2 text-center sm:text-left  ">
                     sqft factory
                   </p>
                 </div>
@@ -29,7 +29,7 @@ const StatsSection = () => {
                   <h3 className="text-2xl sm:text-3xl lg:text-[30px] font-lexend font-normal leading-tight lg:leading-[58px] text-text-green uppercase text-center sm:text-left">
                     25+
                   </h3>
-                  <p className="text-base sm:text-lg font-lexend font-light leading-tight lg:leading-[18px] text-text-dark-12 mt-1 sm:mt-2 text-center sm:text-left">
+                  <p className="text-base sm:text-lg font-lexend font-light leading-tight lg:leading-[16px] text-text-dark-12 mt-1 sm:mt-2 text-center sm:text-left">
                     years experience
                   </p>
                 </div>
@@ -42,7 +42,7 @@ const StatsSection = () => {
                   <h3 className="text-2xl sm:text-3xl lg:text-[30px] font-lexend font-normal leading-tight lg:leading-[58px] text-text-green uppercase text-center sm:text-left">
                     100+
                   </h3>
-                  <p className="text-base sm:text-lg font-lexend font-light leading-tight lg:leading-[18px] text-text-dark-12 mt-1 sm:mt-2 text-center sm:text-left">
+                  <p className="text-base sm:text-lg font-lexend font-light leading-tight lg:leading-[16px] text-text-dark-12 mt-1 sm:mt-2 text-center sm:text-left">
                     Customer Support
                   </p>
                 </div>

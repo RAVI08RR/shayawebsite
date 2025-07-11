@@ -1,4 +1,8 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const FeaturedProduct = () => {
   const featuredProducts = [
@@ -9,7 +13,6 @@ const FeaturedProduct = () => {
 
   return (
     <>
-      {' '}
       {/* Featured Products */}
       <section className="mt-10 sm:mt-20 lg:mt-[68px] px-4 sm:px-6 lg:px-16">
         <div className="w-full lg:max-w-[1790px] mx-auto">
@@ -17,17 +20,46 @@ const FeaturedProduct = () => {
             Featured Products
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-[20px]">
-            {featuredProducts.map((product, index) => (
+          {/* Mobile Carousel */}
+          <div className="block sm:hidden">
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={16}
+              slidesPerView={1.1}
+              pagination={{ clickable: true }}
+              className="pb-8"
+            >
+              {featuredProducts.map((product) => (
+                <SwiperSlide key={product.id}>
+                  <div className="flex flex-col gap-3">
+                    <div className="relative overflow-hidden rounded-lg">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-[250px] object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <p className="text-base font-lexend font-light leading-tight text-text-dark-11">
+                      {product.name}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Tablet/Desktop Grid */}
+          <div className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-[20px]">
+            {featuredProducts.map((product) => (
               <div key={product.id} className="flex flex-col gap-3 sm:gap-4 lg:gap-[14px]">
                 <div className="relative overflow-hidden rounded-lg">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-[250px] sm:h-[300px] lg:h-[462px] object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-[300px] lg:h-[462px] object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <p className="text-base sm:text-lg font-lexend font-light leading-tight lg:leading-[23px] text-text-dark-11">
+                <p className="text-lg font-lexend font-light leading-tight lg:leading-[23px] text-text-dark-11">
                   {product.name}
                 </p>
               </div>

@@ -3,7 +3,7 @@ import Button from '../../components/ui/Button';
 
 const WhoWeAreSection = ({ certifications }) => {
   return (
-    <section className="mt-12 sm:mt-16 lg:mt-[133px] px-4 sm:px-6 lg:px-16">
+    <section className="mt-10 sm:mt-16 lg:mt-[50px] px-4 sm:px-6 lg:px-16">
       <div className="w-full lg:max-w-[1790px] mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-0">
           {/* Video/Image Section */}

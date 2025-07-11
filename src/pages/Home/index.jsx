@@ -132,7 +132,7 @@ const HomePage = () => {
       <IlluminatingInteriorsSection projects={projects} />
 
       {/* Modern Lighting Designed in Dubai */}
-      <ModernLightingDubaiSection roomTypes={roomTypes} />
+      {/* <ModernLightingDubaiSection roomTypes={roomTypes} /> */}
 
       {/* Process Section */}
       <ProcessSection processSteps={processSteps} />
