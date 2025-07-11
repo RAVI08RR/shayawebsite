@@ -55,22 +55,34 @@ h6 {
   .mb-margin {
     margin: 1rem;
   }
+  .bg-testimonial {
+    background-image: url('../../images/substract-mobile.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: left; */
+  }
+  .profile-testimonial {
+    position: relative;
+    top: -19px;
+    left: -138px;
+  }
 }
+@media screen and (min-width: 1200px) {
+  .bg-testimonial {
+    background-image: url('../../images/Subtract.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-position: left; */
+  }
 
-.bg-testimonial {
-  background-image: url('../../images/Subtract.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  /* background-position: left; */
-}
-
-.profile-testimonial {
-  position: relative;
-  top: -51px;
-  left: -51px;
-}
-.bg-testimonials {
-  background-image: url('../../public/images/bg-testimonial.jpg');
+  .profile-testimonial {
+    position: relative;
+    top: -51px;
+    left: -51px;
+  }
+  .bg-testimonials {
+    background-image: url('../../public/images/bg-testimonial.jpg');
+  }
 }
 
 .slider-flex-box {
