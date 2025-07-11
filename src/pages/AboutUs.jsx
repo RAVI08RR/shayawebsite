@@ -31,8 +31,9 @@ const AboutUs = () => {
       <h1 className="text-3xl sm:text-4xl font-marcellus text-center mt-2 mb-6">About Us</h1>
 
       {/* Hero Section */}
-      <section className="bg-[#232323] rounded-xl max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 py-8 md:py-12 md:px-12 mb-10">
-        <div className="flex-1 text-white space-y-6">
+      <section className="bg-[#232323] rounded-xl max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-6 px-4 py-8 md:py-12 md:px-12 mb-10">
+        {/* Left: Text */}
+        <div className="text-white space-y-6">
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-marcellus font-normal leading-tight">
             LIGHTING BEYOND LIMITS, INSPIRED BY DESIGN
           </h2>
@@ -42,19 +43,21 @@ const AboutUs = () => {
             extraordinary experiences.
           </p>
           <div className="flex gap-4 flex-wrap">
-            <button className="bg-white text-gray-900 px-6 py-2 rounded-full font-lexend font-medium text-sm hover:bg-gray-100 transition">
-              VIEW DETAILS
+            <button className="bg-white text-gray-900 px-6 py-2 rounded-full font-lexend font-medium text-sm hover:bg-[#0E4E14] transition flex  hover:text-white">
+              VIEW DETAILS <img src="/images/link-arrow.svg" className="w-5 h-5" alt="arrow" />
             </button>
-            <button className="bg-white text-gray-900 px-6 py-2 rounded-full font-lexend font-medium text-sm hover:bg-gray-100 transition">
-              SCHEDULE A CALL
+            <button className="bg-white text-gray-900 px-6 py-2 rounded-full font-lexend font-medium text-sm hover:bg-[#0E4E14] transition flex hover:text-white">
+              SCHEDULE A CALL{' '}
+              <img src="/images/link-arrow.svg" className="w-5 h-5  hover:text-white" alt="arrow" />
             </button>
           </div>
         </div>
-        <div className="flex-1 flex justify-center">
+        {/* Right: Image */}
+        <div className="flex justify-center w-full">
           <img
             src="../../images/about-us.png"
             alt="Team meeting"
-            className="rounded-lg w-full h-[600.46px] max-w-md object-cover"
+            className="rounded-lg w-full h-[600.46px] object-cover"
           />
         </div>
       </section>
@@ -64,7 +67,7 @@ const AboutUs = () => {
         {/* Left: About Us (col-6) */}
         <div className="bg-gray-50 rounded-xl p-6 flex flex-col justify-between shadow-sm h-full">
           <h3 className="text-lg font-semibold mb-2">ABOUT US</h3>
-          <p className="text-sm text-gray-700 mb-4">
+          <p className="text-lg text-gray-700 mb-4">
             At Shaya Lighting, we believe light is more than illumination—it's an experience. We
             deliver innovative, premium solutions for modern spaces, including versatile indoor
             lighting, advanced track systems, and high-performance outdoor and architectural
@@ -72,13 +75,13 @@ const AboutUs = () => {
             craftsmanship, we create efficient, sustainable, and inspiring environments—Lighting the
             Future with Excellence.
           </p>
-          <button className="bg-green-900 text-white px-4 py-2 rounded-full text-xs font-semibold w-fit">
+          <button className="bg-[#0E4E14]  text-white px-4 py-2 rounded-full text-lg font-semibold  w-[40%]">
             THE STORY
           </button>
         </div>
         {/* Right: Mission and Vision stacked (col-6) */}
-        <div className="mx-auto grid grid-cols-3 md:grid-cols-2 gap-6 h-full">
-          <div className="bg-white rounded-xl p-6 flex flex-col items-center border border-gray-200 shadow-sm flex-1">
+        <div className="lg:mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 h-full m-6">
+          <div className="bg-white rounded-xl p-6 flex flex-col items-center border border-gray-200 shadow-sm">
             <img src="../../images/mission.svg" className="w-20 h-20 mb-2" alt="Mission" />
             <h3 className="text-lg font-semibold mb-2">MISSION</h3>
             <p className="text-sm text-gray-700 text-center">
@@ -86,7 +89,7 @@ const AboutUs = () => {
               solutions.
             </p>
           </div>
-          <div className="bg-white rounded-xl p-6 flex flex-col items-center border border-gray-200 shadow-sm flex-1">
+          <div className="bg-white rounded-xl p-6 flex flex-col items-center border border-gray-200 shadow-sm">
             <img src="../../images/vission.svg" className="w-20 h-20 mb-2" alt="Vision" />
             <h3 className="text-lg font-semibold mb-2">VISION</h3>
             <p className="text-sm text-gray-700 text-center">
@@ -121,7 +124,7 @@ const AboutUs = () => {
         </div>
         {/* Right: Images stacked */}
         <div
-          className="flex flex-col gap-4 justify-center"
+          className="flex flex-col gap-4 justify-center md:m-6"
           style={{ flexDirection: 'row', alignItems: 'center' }}
         >
           <img
@@ -142,7 +145,7 @@ const AboutUs = () => {
         <h2 className="text-2xl sm:text-3xl font-marcellus text-center mb-8">
           More Than 100+ Partners
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center">
+        <div className="flex flex-wrap justify-center gap-4">
           {certifications.map((cert, index) => (
             <img
               key={index}
@@ -151,8 +154,7 @@ const AboutUs = () => {
               className="w-10 sm:w-20 lg:w-20 h-10 sm:h-20 lg:h-20 object-contain"
             />
           ))}
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center mt-5">
+
           {certifications.map((cert, index) => (
             <img
               key={index}

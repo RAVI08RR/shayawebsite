@@ -46,6 +46,7 @@ const Header = () => {
           {/* Mobile Hamburger */}
           <button
             className="lg:hidden p-2"
+            style={{ border: '1px solid', borderRadius: '5px' }}
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
           >
