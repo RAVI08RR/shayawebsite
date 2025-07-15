@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import Button from './ui/Button';
 import { Link } from 'react-router-dom';
@@ -121,11 +120,11 @@ const Header = () => {
                 </svg>
               </span>
 
-              {/* Mega Menu for Products */}
-              <div className="main-mega-menu-container">
-                <div className="absolute top-full bg-white shadow-lg border-t z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out mega-menu-ful-width  overflow-scroll">
-                  <div className="px-16 py-12 w-100">
-                    <div className="space-y-16 w-100">
+              {/* Full Width Mega Menu for Products */}
+              <div className="fixed left-0 right-0 top-[80px] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out h-[80vh]">
+                <div className="bg-white shadow-xl border-t w-full h-full overflow-y-auto">
+                  <div className="max-w-7xl mx-auto px-8 py-12">
+                    <div className="space-y-16">
                       {/* Indoor Section */}
                       <div className="grid grid-cols-6 gap-8">
                         <div className="col-span-1">
@@ -226,13 +225,13 @@ const Header = () => {
               <span className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4">
                 PROJECTS
               </span>
-
               {/* Mega Menu for Projects */}
             </div>
 
             <span className="lg:text-[18px] sm:text-lg font-medium text-text-dark-3 font-lexend">
               BLOG
             </span>
+
             <Button className="lg:text-[16px] bg-button text-white rounded-[22px] px-6 sm:px-7 py-2 text-base sm:text-lg font-medium font-lexend">
               GET A FREE CONSULTATION
             </Button>
@@ -446,14 +445,24 @@ const Header = () => {
 
       {/* Drawer Animation */}
       <style>{`
-        @keyframes slide-in-top {
-          from { transform: translateY(-100%); }
-          to { transform: translateY(0); }
-        }
-        .animate-slide-in-top {
-          animation: slide-in-top 0.3s cubic-bezier(0.4,0,0.2,1);
-        }
-      `}</style>
+  @keyframes slide-in-top {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+  }
+  .animate-slide-in-top {
+    animation: slide-in-top 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  
+  /* Ensure no horizontal scroll and proper mega menu display */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure mega menu appears above other content */
+  .group:hover .fixed {
+    display: block;
+  }
+`}</style>
     </header>
   );
 };

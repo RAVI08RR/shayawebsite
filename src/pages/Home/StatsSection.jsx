@@ -11,7 +11,7 @@ const StatsSection = () => {
             </h2>
           </div>
 
-          <div className="w-full lg:w-[50%] bg-[#F4F4F4] rounded-[10px] p-5 sm:p-5 lg:p-[18px] counter-box h-[136px]">
+          <div className="w-full lg:w-[50%] bg-[#F4F4F4] rounded-[10px] p-5 sm:p-5 lg:p-[18px] counter-box lg:h-[136px]">
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-[32px]">
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-[32px] flex-1">
                 <div className="flex-1">

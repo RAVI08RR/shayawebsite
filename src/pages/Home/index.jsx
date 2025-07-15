@@ -130,6 +130,7 @@ const HomePage = () => {
 
   return (
     <div className="bg-white">
+      {/* <NewHeader /> */}
       {/* <Header /> */}
       {/* Hero Section */}
       <HeroSlider />

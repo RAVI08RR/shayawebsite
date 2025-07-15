@@ -1,0 +1,28 @@
+.mega-menu {
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+}
+
+.mega-menu h6 {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.mega-menu a {
+  display: block;
+  color: #333;
+  padding: 3px 0;
+  text-decoration: none;
+}
+
+.mega-menu a:hover {
+  text-decoration: underline;
+}
+
+.dropdown-menu.show {
+  display: block;
+  width: 100% !important;
+  border: none !important;
+}
