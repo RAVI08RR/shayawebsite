@@ -3,7 +3,7 @@ import Button from '../../components/ui/Button';
 
 const WhoWeAreSection = ({ certifications }) => {
   return (
-    <section className="mt-10 sm:mt-16 lg:mt-[50px] px-4 sm:px-6 lg:px-16">
+    <section className="mt-10 sm:mt-16 lg:mt-[50px] px-4 sm:px-6 lg:px-16 bg-[#F5F5F5] pt-[50px] pb-[50px]">
       <div className="w-full lg:max-w-[1790px] mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-0">
           {/* Video/Image Section */}
@@ -12,7 +12,7 @@ const WhoWeAreSection = ({ certifications }) => {
               <img
                 src="/images/img_image_1_1.png"
                 alt="Shaya Lighting Interior"
-                className="w-full h-[300px] sm:h-[400px] lg:h-[570px] object-cover"
+                className="w-full h-[200px] sm:h-[400px] lg:h-[420px] object-cover"
               />
 
               {/* Play Button */}
@@ -32,23 +32,23 @@ const WhoWeAreSection = ({ certifications }) => {
           </div>
 
           {/* Content Section */}
-          <div className="w-full lg:w-[44%] lg:mt-[30px]">
-            <h2 className="text-3xl sm:text-4xl lg:text-[60px] font-marcellus font-normal leading-tight lg:leading-[64px] text-text-dark-4 uppercase">
+          <div className="w-full lg:w-[44%] lg:mt-[0px]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[55px] font-marcellus font-normal leading-tight lg:leading-[64px] text-text-dark-4 uppercase">
               Who We Are: <br />
               Passion for Design
             </h2>
 
-            <p className="text-base sm:text-lg font-lexend font-light leading-relaxed lg:leading-[24px] text-text-dark-11 mt-4 sm:mt-5 lg:mt-[18px] lg:w-[68%]">
+            <p className="text-base  text-[16px] font-lexend font-light leading-relaxed lg:leading-[24px] text-text-dark-11 mt-4 sm:mt-5 lg:mt-[18px] lg:w-[80%]">
               Shaya Lighting delivers innovative, premium lighting solutions for modern spaces,
               blending design, efficiency, functionality, and exceptional craftsmanship.
             </p>
 
-            <Button className="bg-green-800 text-white rounded-[18px] px-6 sm:px-8 lg:px-[34px] py-1.5 sm:py-2 lg:py-[6px] text-lg sm:text-xl font-medium font-lexend mt-8 sm:mt-10 lg:mt-[40px]">
+            <Button className="bg-green-800 text-white rounded-[18px] px-6 sm:px-8 lg:px-[34px] py-1.5 sm:py-2 lg:py-[6px] text-lg sm:text-xl font-medium font-lexend mt-8 sm:mt-10 lg:mt-[20px]">
               EXPLORE
             </Button>
 
             {/* Certifications */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 lg:gap-[18px] mt-12 sm:mt-16 lg:mt-[30px]">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 lg:gap-[18px] mt-12 sm:mt-16 lg:mt-[2rem]">
               {certifications.map((cert, index) => (
                 <img
                   key={index}

@@ -13,11 +13,11 @@ const IlluminatingInteriorsSection = ({ projects }) => {
   return (
     <section className="mt-16 sm:mt-20 lg:mt-[51px] px-4 sm:px-6 lg:px-16">
       <div className="w-full lg:max-w-[1790px] mx-auto">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-[38px] max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-[60px] font-marcellus font-normal leading-tight lg:leading-[76px] text-text-dark-4 mb-4 sm:mb-6">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-[38px] max-w-5xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-[55px] font-marcellus font-[400] leading-tight lg:leading-[76px] text-text-dark-4 mb-4 sm:mb-6">
             Illuminating Interiors, Enhancing Moods.
           </h2>
-          <p className="text-base sm:text-lg font-lexend font-light leading-relaxed lg:leading-[24px] text-text-gray-2 lg:w-[68%] mx-auto">
+          <p className="text-[16px] sm:text-[16px] font-light leading-relaxed lg:leading-[24px] text-[#6C6C6C] lg:w-[68%] mx-auto font-lexend">
             Explore our standout lighting installations across residential, commercial, and
             architectural spaces — where design meets illumination.
           </p>
@@ -106,10 +106,10 @@ const IlluminatingInteriorsSection = ({ projects }) => {
                 />
               </div>
               <div className="flex flex-col gap-1 lg:gap-[4px]">
-                <p className="text-xl font-lexend font-light leading-tight lg:leading-[25px] text-text-dark-8">
+                <p className="text-[16px] font-lexend font-light leading-tight lg:leading-[25px] text-[#303030]">
                   {project.type}
                 </p>
-                <h3 className="text-2xl lg:text-[25px] font-lexend font-normal leading-tight lg:leading-[40px] text-text-dark-2">
+                <h3 className="text-[32px] lg:text-[20px] font-lexend font-normal leading-tight lg:leading-[40px] text-text-dark-2">
                   {project.title}
                 </h3>
               </div>

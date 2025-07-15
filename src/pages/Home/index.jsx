@@ -119,7 +119,10 @@ const HomePage = () => {
 
   if (loading) {
     return (
-      <div className="w-full h-screen fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
+      <div
+        className="w-full h-screen fixed inset-0  flex items-center justify-center bg-black bg-opacity-90 "
+        style={{ zIndex: '9999999' }}
+      >
         <SVGLoader duration={2000} onComplete={handleLoaderComplete} />
       </div>
     );

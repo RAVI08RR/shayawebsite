@@ -20,7 +20,7 @@ const SVGLoader = ({ duration = 3000, onComplete }) => {
   }, [duration, onComplete]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 z-999999">
       <div className="flex flex-col items-center space-y-6">
         {/* SVG Logo with Animation */}
         <div className="relative">

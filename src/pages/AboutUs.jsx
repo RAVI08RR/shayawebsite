@@ -80,7 +80,7 @@ const AboutUs = () => {
           </button>
         </div>
         {/* Right: Mission and Vision stacked (col-6) */}
-        <div className="lg:mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 h-full m-6">
+        <div className="lg:mx-3 md:mx-5§ grid grid-cols-1 md:grid-cols-2 gap-6 h-full align-middle ">
           <div className="bg-white rounded-xl p-6 flex flex-col items-center border border-gray-200 shadow-sm">
             <img src="../../images/mission.svg" className="w-20 h-20 mb-2" alt="Mission" />
             <h3 className="text-lg font-semibold mb-2">MISSION</h3>

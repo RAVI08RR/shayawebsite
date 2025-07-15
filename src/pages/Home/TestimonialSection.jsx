@@ -149,9 +149,9 @@ const TestimonialSection = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 buttlets-testimonail  ${
                 index === currentIndex
-                  ? 'bg-white scale-125'
+                  ? 'bg-white scale-125 '
                   : 'bg-white bg-opacity-40 hover:bg-opacity-60'
               }`}
             />

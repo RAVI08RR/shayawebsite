@@ -3,12 +3,12 @@ import React from 'react';
 const ExploreCatalogsSection = ({ catalogs }) => {
   return (
     <section className="bg-black py-16 sm:py-20 lg:py-[100px] mt-5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-16">
         <div className="text-center mb-0">
           <h2 className="text-white text-3xl sm:text-4xl lg:text-[52px] font-marcellus leading-tight mb-2">
             Explore Our Catalogs
           </h2>
-          <p className="text-text-gray-6 text-white sm:text-lg font-lexend font-light max-w-3xl mx-auto leading-relaxed pb-5 pt-5 ">
+          <p className="text-text-gray-6 text-white sm:text-[16px] font-lexend font-light max-w-3xl mx-auto leading-relaxed pb-5 pt-5 ">
             Discover our complete lighting collection, featuring timeless designs, technical specs,
             and innovative solutions for every space. Download the catalog to browse premium
             lighting products at your convenience.

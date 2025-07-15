@@ -3,12 +3,12 @@ import React from 'react';
 const ProcessSection = ({ processSteps }) => {
   return (
     <section className="mt-16 sm:mt-20 lg:mt-[71px] px-4 sm:px-6 lg:px-16 mb-10">
-      <div className="w-full max-w-4xl mx-auto">
+      <div className="w-full max-w-[70rem] mx-auto">
         <div className="text-center mb-8 sm:mb-12 lg:mb-[38px]">
-          <h2 className="text-2xl sm:text-3xl lg:text-[50px] font-marcellus font-normal leading-tight lg:leading-[63px] text-text-dark-5 capitalize mb-4 sm:mb-6">
+          <h2 className="text-[55px] sm:text-3xl lg:text-[50px] font-marcellus font-normal leading-tight lg:leading-[63px] text-text-dark-5 capitalize mb-4 sm:mb-6">
             Our Process – Simple, Fast & Reliable
           </h2>
-          <p className="text-lg sm:text-xl font-lexend font-light leading-tight lg:leading-[25px] text-text-gray-4">
+          <p className="text-[16px] sm:text-[16px] font-lexend font-light leading-tight lg:leading-[25px] text-[#6C6C6C]">
             From site visit to timely delivery, we make lighting hassle-free.
           </p>
         </div>

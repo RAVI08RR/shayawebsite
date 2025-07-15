@@ -13,7 +13,7 @@ const HeroSlider = () => {
       title: 'Innovative\nLighting\nSolutions',
       subtitle: '02',
       description: 'Smart and elegant lighting designs for your future',
-      image: '../../images/slide-2.png',
+      image: '../../images/slide-1.png',
     },
     {
       title: 'Inspired\nSignature\nAmbience.',
@@ -33,7 +33,7 @@ const HeroSlider = () => {
   }, []);
 
   return (
-    <section className="h-[650px] w-[90%] overflow-hidden relative mt-5  rounded-2xl m-auto">
+    <section className="h-[650px] w-[92.2%] overflow-hidden relative mt-10  rounded-2xl m-auto ">
       <div className="relative w-full h-full">
         {slides.map((slide, index) => (
           <div
@@ -49,14 +49,29 @@ const HeroSlider = () => {
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/30" />
 
+              <div className="text-slider-box text-center pt-10 ">
+                <div className="left-text-box">
+                  <h1 className="text-white text-5xl lg:text-7xl font-light leading-[1.2] tracking-wide whitespace-pre-line custom-gradient-text">
+                    INSPIRED <span className="font-semibold">SIGNATURE</span>
+                  </h1>
+                </div>
+                <div className="boder-slider-light"></div>
+
+                <div className="right-text-box">
+                  <h1 className="text-white text-5xl lg:text-7xl font-light leading-[1.2] tracking-wide whitespace-pre-line custom-gradient-text">
+                    LIGHTING <span className="font-semibold">AMBIENCE.</span>
+                  </h1>
+                </div>
+              </div>
+
               {/* Heading Text (top-right) */}
-              <div className="text-center pt-10">
+              {/* <div className="text-center pt-10">
                 <h1 className="text-white text-5xl lg:text-7xl font-light leading-[1.2] tracking-wide whitespace-pre-line custom-gradient-text">
                   INSPIRED <span className="font-semibold">SIGNATURE</span>
                   {'\n'}
                   LIGHTING <span className="font-semibold">AMBIENCE.</span>
                 </h1>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}
