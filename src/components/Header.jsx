@@ -150,10 +150,10 @@ const Header = () => {
               {isMegaMenuOpen && (
                 <div className="fixed left-0 right-0 top-[79px] z-50 transition-all duration-300 ease-in-out h-[86vh]">
                   <div className="bg-white shadow-xl border-t w-full h-full overflow-y-auto">
-                    <div className="max-w-[90%] mx-auto px-8 py-12">
-                      <div className="space-y-5">
+                    <div className="max-w-[90%] mx-auto px-8 py-4">
+                      <div className="space-y-2">
                         {/* Indoor Section */}
-                        <div className="flex flex-row items-start mb-10">
+                        <div className="flex flex-row items-start mb-0">
                           <div className="w-48 flex-shrink-0 mr-8">
                             <h3 className="text-lg font-bold text-gray-900 mb-3">
                               {megaMenuData.indoor.title}
