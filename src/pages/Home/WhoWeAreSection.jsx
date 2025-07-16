@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../components/ui/Button';
 
 const WhoWeAreSection = ({ certifications }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="mt-10 sm:mt-16 lg:mt-[50px] px-4 sm:px-6 lg:px-16 bg-[#F5F5F5] pt-[50px] pb-[50px]">
       <div className="w-full lg:max-w-[1790px] mx-auto">
@@ -20,6 +22,7 @@ const WhoWeAreSection = ({ certifications }) => {
                 <button
                   className="w-16 sm:w-20 lg:w-[124px] h-16 sm:h-20 lg:h-[124px] bg-overlay-1 rounded-full flex items-center justify-center hover:bg-opacity-60 transition-all duration-200"
                   aria-label="Play video"
+                  onClick={() => setIsModalOpen(true)}
                 >
                   <img
                     src="/images/img_polygon_1.svg"
@@ -29,6 +32,31 @@ const WhoWeAreSection = ({ certifications }) => {
                 </button>
               </div>
             </div>
+            {/* Video Modal */}
+            {isModalOpen && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+                <div className="relative w-[90vw] max-w-[600px] aspect-video bg-black rounded-lg shadow-lg flex items-center justify-center">
+                  <button
+                    className="absolute top-2 right-2 text-white text-2xl bg-black bg-opacity-50 rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-80"
+                    onClick={() => setIsModalOpen(false)}
+                    aria-label="Close video"
+                  >
+                    &times;
+                  </button>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                    title="Who We Are Video"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                {/* Click outside to close */}
+                <div className="fixed inset-0" onClick={() => setIsModalOpen(false)}></div>
+              </div>
+            )}
           </div>
 
           {/* Content Section */}

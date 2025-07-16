@@ -19,7 +19,7 @@ const ExploreCatalogsSection = ({ catalogs }) => {
           {catalogs.map((catalog) => (
             <div
               key={catalog.id}
-              className="bg-[#111111] rounded-2xl p-4 lg:p-10 flex items-center gap-3 lg:gap-5"
+              className="bg-[#111111] rounded-2xl p-4 lg:p-10 flex items-center gap-10 lg:gap-5"
             >
               {/* Icon on Left */}
               <div className="flex-shrink-0">

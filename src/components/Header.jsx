@@ -1,11 +1,30 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Button from './ui/Button';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null); // null or 'projects'
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const megaMenuRef = useRef(null);
+
+  // Close mega menu on outside click
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (megaMenuRef.current && !megaMenuRef.current.contains(event.target)) {
+        setIsMegaMenuOpen(false);
+      }
+    }
+    if (isMegaMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMegaMenuOpen]);
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
@@ -20,7 +39,7 @@ const Header = () => {
       categories: [
         {
           title: 'Spotlights & Downlights',
-          items: ['Petit', 'Omado', 'Olev', 'Atala', 'Thea', 'Nur'],
+          items: ['Petit', 'Omado', 'Olev'],
         },
         {
           title: 'Surface & Modular',
@@ -92,11 +111,13 @@ const Header = () => {
         <div className="flex justify-between items-center w-full">
           {/* Logo */}
           <div className="flex justify-start items-center">
-            <img
-              src="/images/img_group_111.svg"
-              alt="Shaya Lighting Logo"
-              className="w-[100px] sm:w-[140px] lg:w-[120px] h-auto"
-            />
+            <a href="/" className="logo cursor-pointer">
+              <img
+                src="/images/img_group_111.svg"
+                alt="Shaya Lighting Logo"
+                className="w-[100px] sm:w-[140px] lg:w-[120px] h-auto"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -106,11 +127,18 @@ const Header = () => {
             </span>
 
             {/* PRODUCTS */}
-            <div className="relative group">
-              <span className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4">
+            <div className="relative">
+              <span
+                className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4"
+                onClick={() => setIsMegaMenuOpen((prev) => !prev)}
+                tabIndex={0}
+                onBlur={() => setTimeout(() => setIsMegaMenuOpen(false), 200)}
+                aria-haspopup="true"
+                aria-expanded={isMegaMenuOpen}
+              >
                 PRODUCTS
                 <svg
-                  className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                  className={`w-4 h-4 transition-transform duration-200 ${isMegaMenuOpen ? 'rotate-180' : ''}`}
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -121,103 +149,121 @@ const Header = () => {
               </span>
 
               {/* Full Width Mega Menu for Products */}
-              <div className="fixed left-0 right-0 top-[80px] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out h-[80vh]">
-                <div className="bg-white shadow-xl border-t w-full h-full overflow-y-auto">
-                  <div className="max-w-7xl mx-auto px-8 py-12">
-                    <div className="space-y-16">
-                      {/* Indoor Section */}
-                      <div className="grid grid-cols-6 gap-8">
-                        <div className="col-span-1">
-                          <h3 className="text-lg font-bold text-gray-900 mb-4">
-                            {megaMenuData.indoor.title}
-                          </h3>
-                          <img
-                            src={megaMenuData.indoor.image || '/placeholder.svg'}
-                            alt="Indoor lighting"
-                            className="w-full h-32 object-cover rounded-lg"
-                          />
-                        </div>
-                        {megaMenuData.indoor.categories.map((category, index) => (
-                          <div key={index} className="col-span-1">
-                            <h4 className="font-semibold text-gray-900 mb-3 text-sm">
-                              {category.title}
-                            </h4>
-                            <ul className="space-y-2">
-                              {category.items.map((item, itemIndex) => (
-                                <li key={itemIndex}>
-                                  <a href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                                    {item}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
+              {isMegaMenuOpen && (
+                <div
+                  ref={megaMenuRef}
+                  className="fixed left-0 right-0 top-[79px] z-50 transition-all duration-300 ease-in-out h-[86vh]"
+                >
+                  <div className="bg-white shadow-xl border-t w-full h-full overflow-y-auto">
+                    <div className="max-w-[90%] mx-auto px-8 py-12">
+                      <div className="space-y-5">
+                        {/* Indoor Section */}
+                        <div className="flex flex-row items-start mb-10">
+                          <div className="w-48 flex-shrink-0 mr-8">
+                            <h3 className="text-lg font-bold text-gray-900 mb-3">
+                              {megaMenuData.indoor.title}
+                            </h3>
+                            <img
+                              src={megaMenuData.indoor.image || '/placeholder.svg'}
+                              alt="Indoor lighting"
+                              className="w-full h-32 object-cover rounded-lg"
+                            />
                           </div>
-                        ))}
-                      </div>
-
-                      {/* Outdoor Section */}
-                      <div className="grid grid-cols-5 gap-8">
-                        <div className="col-span-1">
-                          <h3 className="text-lg font-bold text-gray-900 mb-4">
-                            {megaMenuData.outdoor.title}
-                          </h3>
-                          <img
-                            src={megaMenuData.outdoor.image || '/placeholder.svg'}
-                            alt="Outdoor lighting"
-                            className="w-full h-32 object-cover rounded-lg"
-                          />
-                        </div>
-                        {megaMenuData.outdoor.categories.map((category, index) => (
-                          <div key={index} className="col-span-1">
-                            <h4 className="font-semibold text-gray-900 mb-3 text-sm">
-                              {category.title}
-                            </h4>
-                            <ul className="space-y-2">
-                              {category.items.map((item, itemIndex) => (
-                                <li key={itemIndex}>
-                                  <a href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                                    {item}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
+                          <div className="flex flex-row gap-x-12 flex-1">
+                            {megaMenuData.indoor.categories.map((category, index) => (
+                              <div key={index}>
+                                <h4 className="font-semibold text-gray-900 mb-2 text-base">
+                                  {category.title}
+                                </h4>
+                                <ul className="space-y-1">
+                                  {category.items.map((item, itemIndex) => (
+                                    <li key={itemIndex}>
+                                      <a
+                                        href="#"
+                                        className="text-gray-700 hover:text-gray-900 text-sm"
+                                      >
+                                        {item}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
                           </div>
-                        ))}
-                      </div>
-
-                      {/* Lighting Controls Section */}
-                      <div className="grid grid-cols-5 gap-8">
-                        <div className="col-span-1">
-                          <h3 className="text-lg font-bold text-gray-900 mb-4">
-                            {megaMenuData.lightingControls.title}
-                          </h3>
-                          <img
-                            src={megaMenuData.lightingControls.image || '/placeholder.svg'}
-                            alt="Lighting controls"
-                            className="w-full h-32 object-cover rounded-lg"
-                          />
                         </div>
-                        {megaMenuData.lightingControls.categories.map((category, index) => (
-                          <div key={index} className="col-span-1">
-                            <h4 className="font-semibold text-gray-900 mb-3 text-sm">
-                              {category.title}
-                            </h4>
-                            <ul className="space-y-2">
-                              {category.items.map((item, itemIndex) => (
-                                <li key={itemIndex}>
-                                  <a href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                                    {item}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
+                        {/* Outdoor Section */}
+                        <div className="flex flex-row items-start mb-10">
+                          <div className="w-48 flex-shrink-0 mr-8">
+                            <h3 className="text-lg font-bold text-gray-900 mb-3">
+                              {megaMenuData.outdoor.title}
+                            </h3>
+                            <img
+                              src={megaMenuData.outdoor.image || '/placeholder.svg'}
+                              alt="Outdoor lighting"
+                              className="w-full h-32 object-cover rounded-lg"
+                            />
                           </div>
-                        ))}
+                          <div className="flex flex-row gap-x-12 flex-1">
+                            {megaMenuData.outdoor.categories.map((category, index) => (
+                              <div key={index}>
+                                <h4 className="font-semibold text-gray-900 mb-2 text-base">
+                                  {category.title}
+                                </h4>
+                                <ul className="space-y-1">
+                                  {category.items.map((item, itemIndex) => (
+                                    <li key={itemIndex}>
+                                      <a
+                                        href="#"
+                                        className="text-gray-700 hover:text-gray-900 text-sm"
+                                      >
+                                        {item}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        {/* Lighting Controls Section */}
+                        <div className="flex flex-row items-start">
+                          <div className="w-48 flex-shrink-0 mr-8">
+                            <h3 className="text-lg font-bold text-gray-900 mb-3">
+                              {megaMenuData.lightingControls.title}
+                            </h3>
+                            <img
+                              src={megaMenuData.lightingControls.image || '/placeholder.svg'}
+                              alt="Lighting controls"
+                              className="w-full h-32 object-cover rounded-lg"
+                            />
+                          </div>
+                          <div className="flex flex-row gap-x-12 flex-1">
+                            {megaMenuData.lightingControls.categories.map((category, index) => (
+                              <div key={index}>
+                                <h4 className="font-semibold text-gray-900 mb-2 text-base">
+                                  {category.title}
+                                </h4>
+                                <ul className="space-y-1">
+                                  {category.items.map((item, itemIndex) => (
+                                    <li key={itemIndex}>
+                                      <a
+                                        href="#"
+                                        className="text-gray-700 hover:text-gray-900 text-sm"
+                                      >
+                                        {item}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* PROJECTS */}

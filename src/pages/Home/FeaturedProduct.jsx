@@ -40,7 +40,7 @@ const FeaturedProduct = () => {
                         className="w-full h-[250px] object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <p className="text-base font-lexend font-light leading-tight text-text-dark-11">
+                    <p className="text-base font-lexend text-center font-light leading-tight text-text-dark-11">
                       {product.name}
                     </p>
                   </div>
