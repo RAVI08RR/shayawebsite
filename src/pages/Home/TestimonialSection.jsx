@@ -57,7 +57,7 @@ const TestimonialSection = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden bg-testimonials">
+    <div className="relative min-h-[50vh] bg-black overflow-hidden bg-testimonials">
       {/* Background Pattern */}
       {/* <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
@@ -72,7 +72,7 @@ const TestimonialSection = () => {
         </svg>
       </div> */}
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal text-white mb-4 tracking-wide">
@@ -126,21 +126,6 @@ const TestimonialSection = () => {
               </div>
             </div>
           </div>
-
-          {/* Navigation Arrows */}
-          {/* <button
-            onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 group"
-          >
-            <ChevronLeft className="w-6 h-6 text-white group-hover:text-gray-200" />
-          </button> */}
-
-          {/* <button
-            onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 group"
-          >
-            <ChevronRight className="w-6 h-6 text-white group-hover:text-gray-200" />
-          </button> */}
         </div>
 
         {/* Pagination Dots */}

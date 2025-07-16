@@ -4,21 +4,37 @@ import React from 'react';
 const HeroSlider = () => {
   const slides = [
     {
-      title: 'Factory.\nFoundation.\nFuture.',
-      subtitle: '03',
-      description: 'Strong roots behind shining lighting products',
+      title: 'Inspired\nSignature\nAmbience.',
+      subtitle: '01',
+      description: 'Creating perfect lighting experiences',
       image: '../../images/slide-1.png',
     },
+
     {
       title: 'Innovative\nLighting\nSolutions',
       subtitle: '02',
       description: 'Smart and elegant lighting designs for your future',
       image: '../../images/slide-1.png',
     },
+
     {
-      title: 'Inspired\nSignature\nAmbience.',
-      subtitle: '01',
-      description: 'Creating perfect lighting experiences',
+      title: 'Factory.\nFoundation.\nFuture.',
+      subtitle: '03',
+      description: 'Strong roots behind shining lighting products',
+      image: '../../images/slide-1.png',
+    },
+
+    {
+      title: 'Factory.\nFoundation.\nFuture.',
+      subtitle: '04',
+      description: 'Strong roots behind shining lighting products',
+      image: '../../images/slide-1.png',
+    },
+
+    {
+      title: 'Factory.\nFoundation.\nFuture.',
+      subtitle: '05',
+      description: 'Strong roots behind shining lighting products',
       image: '../../images/slide-1.png',
     },
   ];
@@ -99,7 +115,10 @@ const HeroSlider = () => {
 
         {/* Dots */}
         <div className="px-6 pb-5">
-          <div className="flex space-x-3">
+          <div
+            className="flex space-x-3 mr-[3rem] "
+            style={{ alignItems: 'end', justifyContent: 'flex-end' }}
+          >
             {slides.map((_, index) => (
               <button
                 key={index}
