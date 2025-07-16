@@ -210,6 +210,11 @@ header {
 main {
   margin-top: 5rem !important;
 }
+@media only screen and (min-width: 1336px) and (max-width: 1440px) {
+  .main-slider-h {
+    height: 574px !important;
+  }
+}
 
 @media only screen and (min-width: 1600px) and (max-width: 1920px) {
   /* .mega-menu-ful-width {

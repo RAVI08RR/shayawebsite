@@ -7,12 +7,12 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null); // null or 'projects'
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
-  const megaMenuRef = useRef(null);
+  const productsMenuRef = useRef(null);
 
   // Close mega menu on outside click
   useEffect(() => {
     function handleClickOutside(event) {
-      if (megaMenuRef.current && !megaMenuRef.current.contains(event.target)) {
+      if (productsMenuRef.current && !productsMenuRef.current.contains(event.target)) {
         setIsMegaMenuOpen(false);
       }
     }
@@ -127,12 +127,10 @@ const Header = () => {
             </span>
 
             {/* PRODUCTS */}
-            <div className="relative">
+            <div className="relative" ref={productsMenuRef}>
               <span
                 className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4"
                 onClick={() => setIsMegaMenuOpen((prev) => !prev)}
-                tabIndex={0}
-                onBlur={() => setTimeout(() => setIsMegaMenuOpen(false), 200)}
                 aria-haspopup="true"
                 aria-expanded={isMegaMenuOpen}
               >
@@ -150,10 +148,7 @@ const Header = () => {
 
               {/* Full Width Mega Menu for Products */}
               {isMegaMenuOpen && (
-                <div
-                  ref={megaMenuRef}
-                  className="fixed left-0 right-0 top-[79px] z-50 transition-all duration-300 ease-in-out h-[86vh]"
-                >
+                <div className="fixed left-0 right-0 top-[79px] z-50 transition-all duration-300 ease-in-out h-[86vh]">
                   <div className="bg-white shadow-xl border-t w-full h-full overflow-y-auto">
                     <div className="max-w-[90%] mx-auto px-8 py-12">
                       <div className="space-y-5">
@@ -169,7 +164,7 @@ const Header = () => {
                               className="w-full h-32 object-cover rounded-lg"
                             />
                           </div>
-                          <div className="flex flex-row gap-x-12 flex-1">
+                          <div className="flex flex-row gap-x-12 flex-1 mt-[2rem]">
                             {megaMenuData.indoor.categories.map((category, index) => (
                               <div key={index}>
                                 <h4 className="font-semibold text-gray-900 mb-2 text-base">
@@ -203,7 +198,7 @@ const Header = () => {
                               className="w-full h-32 object-cover rounded-lg"
                             />
                           </div>
-                          <div className="flex flex-row gap-x-12 flex-1">
+                          <div className="flex flex-row gap-x-12 flex-1 mt-[2rem]">
                             {megaMenuData.outdoor.categories.map((category, index) => (
                               <div key={index}>
                                 <h4 className="font-semibold text-gray-900 mb-2 text-base">
@@ -237,7 +232,7 @@ const Header = () => {
                               className="w-full h-32 object-cover rounded-lg"
                             />
                           </div>
-                          <div className="flex flex-row gap-x-12 flex-1">
+                          <div className="flex flex-row gap-x-12 flex-1 mt-[2rem]">
                             {megaMenuData.lightingControls.categories.map((category, index) => (
                               <div key={index}>
                                 <h4 className="font-semibold text-gray-900 mb-2 text-base">
