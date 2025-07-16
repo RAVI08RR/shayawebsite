@@ -14,7 +14,7 @@ const IlluminatingInteriorsSection = ({ projects }) => {
     <section className="mt-16 sm:mt-20 lg:mt-[51px] px-4 sm:px-6 lg:px-16">
       <div className="w-full lg:max-w-[1790px] mx-auto">
         <div className="text-center mb-8 sm:mb-12 lg:mb-[38px] max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-[55px] font-marcellus font-[400] leading-tight lg:leading-[76px] text-text-dark-4 mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-[45px] font-marcellus font-[400] leading-tight lg:leading-[76px] text-text-dark-4 mb-4 sm:mb-6">
             Illuminating Interiors, Enhancing Moods.
           </h2>
           <p className="text-[16px] sm:text-[16px] font-light leading-relaxed lg:leading-[24px] text-[#6C6C6C] lg:w-[68%] mx-auto font-lexend">
@@ -102,7 +102,7 @@ const IlluminatingInteriorsSection = ({ projects }) => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-[498px] object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="flex flex-col gap-1 lg:gap-[4px]">

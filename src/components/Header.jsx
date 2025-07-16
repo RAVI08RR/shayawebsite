@@ -40,10 +40,12 @@ const Header = () => {
         {
           title: 'Spotlights & Downlights',
           items: ['Petit', 'Omado', 'Olev'],
+          link: '/category/spotlights',
         },
         {
           title: 'Surface & Modular',
           items: ['Luere', 'Visesa'],
+          link: '/category/surface',
         },
         {
           title: 'Linear Profiles',
@@ -62,10 +64,12 @@ const Header = () => {
     outdoor: {
       title: 'Outdoor',
       image: '/images/ourdoor-menu.png',
+
       categories: [
         {
           title: 'Street Lighting',
           items: ['Bollard', 'Inground', 'Spotlights'],
+          link: '/category/street-lighting',
         },
         {
           title: 'Flood & high mast',
@@ -122,14 +126,14 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <span className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend">
+            <span className="lg:text-[14px] sm:text-lg font-medium text-text-dark-3 font-lexend">
               <Link to="/about">ABOUT</Link>
             </span>
 
             {/* PRODUCTS */}
             <div className="relative" ref={productsMenuRef}>
               <span
-                className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4"
+                className="lg:text-[14px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4"
                 onClick={() => setIsMegaMenuOpen((prev) => !prev)}
                 aria-haspopup="true"
                 aria-expanded={isMegaMenuOpen}
@@ -150,7 +154,7 @@ const Header = () => {
               {isMegaMenuOpen && (
                 <div className="fixed left-0 right-0 top-[79px] z-50 transition-all duration-300 ease-in-out h-[86vh]">
                   <div className="bg-white shadow-xl border-t w-full h-full overflow-y-auto">
-                    <div className="max-w-[90%] mx-auto px-8 py-4">
+                    <div className="max-w-[90%] mx-auto  py-4">
                       <div className="space-y-2">
                         {/* Indoor Section */}
                         <div className="flex flex-row items-start mb-0">
@@ -167,9 +171,11 @@ const Header = () => {
                           <div className="flex flex-row gap-x-12 flex-1 mt-[2rem]">
                             {megaMenuData.indoor.categories.map((category, index) => (
                               <div key={index}>
-                                <h4 className="font-semibold text-gray-900 mb-2 text-base">
-                                  {category.title}
-                                </h4>
+                                <a href={category.link} className="cursor-pointer">
+                                  <h4 className="font-semibold text-gray-900 mb-2 text-base">
+                                    {category.title}
+                                  </h4>
+                                </a>
                                 <ul className="space-y-1">
                                   {category.items.map((item, itemIndex) => (
                                     <li key={itemIndex}>
@@ -263,17 +269,17 @@ const Header = () => {
 
             {/* PROJECTS */}
             <div className="relative group">
-              <span className="lg:text-[16px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4">
+              <span className="lg:text-[14px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4">
                 PROJECTS
               </span>
               {/* Mega Menu for Projects */}
             </div>
 
-            <span className="lg:text-[18px] sm:text-lg font-medium text-text-dark-3 font-lexend">
+            <span className="lg:text-[14px] sm:text-lg font-medium text-text-dark-3 font-lexend">
               BLOG
             </span>
 
-            <Button className="lg:text-[16px] bg-button text-white rounded-[22px] px-6 sm:px-7 py-2 text-base sm:text-lg font-medium font-lexend">
+            <Button className="lg:text-[14px] bg-button text-white rounded-[22px] px-6 sm:px-7 py-2 text-base sm:text-lg font-medium font-lexend">
               GET A FREE CONSULTATION
             </Button>
           </nav>

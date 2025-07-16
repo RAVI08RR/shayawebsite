@@ -249,3 +249,11 @@ main {
     margin-left: 14px;
   }
 }
+
+@media screen and (max-width: 390px) {
+  .profile-testimonial {
+    position: relative;
+    top: -12px;
+    left: -106px;
+  }
+}

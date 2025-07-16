@@ -47,8 +47,8 @@ const StatsSection = () => {
         </div>
         {/* Desktop Layout */}
         <div className="hidden lg:flex flex-row justify-between items-start lg:items-center gap-0">
-          <div className="w-[70%]">
-            <h2 className="text-2xl sm:text-3xl lg:text-[50px] font-marcellus font-[400] leading-tight lg:leading-[64px] text-text-dark-4 text-center lg:text-left mb-6 lg:mb-0 lg:w-[75%] lg:inline-block align-top">
+          <div className="w-[65%]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[45px] font-marcellus font-[400] leading-tight lg:leading-[64px] text-text-dark-4 text-center lg:text-left mb-6 lg:mb-0 lg:w-[65%] lg:inline-block align-top">
               Trusted Numbers,
               <br className="sm:hidden" /> Timeless Light
             </h2>

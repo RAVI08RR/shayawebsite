@@ -61,7 +61,7 @@ const WhoWeAreSection = ({ certifications }) => {
 
           {/* Content Section */}
           <div className="w-full lg:w-[44%] lg:mt-[0px]">
-            <h2 className="text-3xl sm:text-4xl lg:text-[55px] font-marcellus font-normal leading-tight lg:leading-[64px] text-text-dark-4 uppercase">
+            <h2 className="text-3xl sm:text-4xl lg:text-[45px] font-marcellus font-normal  leading-[49px] lg:leading-[52px] text-text-dark-4 uppercase">
               Who We Are: <br />
               Passion for Design
             </h2>
@@ -71,7 +71,7 @@ const WhoWeAreSection = ({ certifications }) => {
               blending design, efficiency, functionality, and exceptional craftsmanship.
             </p>
 
-            <Button className="bg-green-800 text-white rounded-[18px] px-6 sm:px-8 lg:px-[34px] py-1.5 sm:py-2 lg:py-[6px] text-lg sm:text-xl font-medium font-lexend mt-8 sm:mt-10 lg:mt-[20px]">
+            <Button className="bg-green-800 text-white rounded-[19.5px] px-6 sm:px-8 lg:px-[34px] py-1.5 sm:py-2 lg:py-[6px] text-lg sm:text-xl font-medium font-lexend mt-8 sm:mt-10 lg:mt-[20px] w-[231px]">
               EXPLORE
             </Button>
 
@@ -82,7 +82,7 @@ const WhoWeAreSection = ({ certifications }) => {
                   key={index}
                   src={cert}
                   alt={`Certification ${index + 1}`}
-                  className="w-10 sm:w-20 lg:w-20 h-10 sm:h-20 lg:h-20 object-contain"
+                  className="w-[65.5px] sm:w-20 lg:w-[65.5px] h-[65.5px] sm:h-20 lg:h-[65.5px] object-contain"
                 />
               ))}
             </div>

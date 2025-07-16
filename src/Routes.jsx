@@ -4,6 +4,8 @@ import Layout from './components/Layout';
 import HomePage from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import Categories from './pages/Categories';
+import ProductDetail from './pages/ProductDetail';
 
 const AppRoutes = () => (
   <Router>
@@ -12,7 +14,8 @@ const AppRoutes = () => (
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
-
+        <Route path="/category/spotlights" element={<Categories />} />
+        <Route path="/products/:category/:product" element={<ProductDetail />} />
         {/* Add other routes here */}
       </Routes>
     </Layout>

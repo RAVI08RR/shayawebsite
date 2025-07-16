@@ -75,7 +75,7 @@ const TestimonialSection = () => {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal text-white mb-4 tracking-wide">
+          <h2 className="text-3xl sm:text-5xl lg:text-[45px] font-serif font-normal text-white mb-4 tracking-wide">
             Trusted By Designers & Builders
           </h2>
         </div>

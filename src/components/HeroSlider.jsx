@@ -94,20 +94,20 @@ const HeroSlider = () => {
       </div>
 
       {/* Content Card */}
-      <div className="absolute bottom-6 lg:right-6 bg-white rounded-xl shadow-2xl w-auto lg:w-[480px] overflow-hidden m-auto sm:m-10 mb-margin slider-dis-box">
-        <div className="flex justify-between p-4 gap-2">
+      <div className="absolute bottom-6 lg:right-6 bg-white rounded-xl shadow-2xl w-auto lg:w-[480px] overflow-hidden m-auto sm:m-10 mb-margin slider-dis-box lg:h-[117px]">
+        <div className="flex justify-evenly p-4 gap-2">
           <h2
-            className="text-green-900 text-lg font-semibold  leading-snug "
-            style={{ fontSize: '20px' }}
+            className="text-green-900 text-lg font-[400]  leading-snug font-marcellus w-[36%]"
+            style={{ fontSize: '22px ', lineHeight: '28px' }}
           >
             {slides[currentSlide].title}
           </h2>
 
           <div className="flex flex-col justify-between items-start slider-flex-box">
-            <span className="text-green-800 font-semibold text-sm mb-1">
+            <span className="text-green-800 font-[400] text-sm mb-1 font-lexend ">
               {slides[currentSlide].subtitle}
             </span>
-            <span className="text-gray-900 font-medium text-sm leading-snug max-w-[180px]">
+            <span className="text-gray-900 font-[300] text-[14px] leading-snug max-w-[180px]">
               {slides[currentSlide].description}
             </span>
           </div>
@@ -116,7 +116,7 @@ const HeroSlider = () => {
         {/* Dots */}
         <div className="px-6 pb-5">
           <div
-            className="flex space-x-3 mr-[3rem] "
+            className="flex space-x-3 mr-[3rem] mt-[-40px] "
             style={{ alignItems: 'end', justifyContent: 'flex-end' }}
           >
             {slides.map((_, index) => (

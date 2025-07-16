@@ -5,7 +5,7 @@ const ExploreCatalogsSection = ({ catalogs }) => {
     <section className="bg-black py-16 sm:py-20 lg:py-[100px] mt-5">
       <div className=" mx-auto px-4 sm:px-6 lg:px-16">
         <div className="text-center mb-0">
-          <h2 className="text-white text-3xl sm:text-4xl lg:text-[52px] font-marcellus leading-tight mb-2">
+          <h2 className="text-white text-3xl sm:text-4xl lg:text-[45px] font-marcellus leading-tight mb-2">
             Explore Our Catalogs
           </h2>
           <p className="text-text-gray-6 text-white sm:text-[16px] font-lexend font-light max-w-3xl mx-auto leading-relaxed pb-5 pt-5 ">

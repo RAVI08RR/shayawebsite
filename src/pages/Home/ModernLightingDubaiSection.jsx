@@ -12,7 +12,7 @@ const ModernLightingDubaiSection = ({ roomTypes }) => {
         <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-10">
           {/* Left Content */}
           <div className="w-full lg:w-[22%] lg:mt-[28px]">
-            <h2 className="text-2xl sm:text-3xl lg:text-[50px] font-marcellus font-normal leading-tight lg:leading-[56px] text-text-dark-4 capitalize mb-4 sm:mb-6 lg:mb-[12px]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[45px] font-marcellus font-normal leading-tight lg:leading-[56px] text-text-dark-4 capitalize mb-4 sm:mb-6 lg:mb-[12px]">
               Modern Lighting
               <br />
               designed in <br />
