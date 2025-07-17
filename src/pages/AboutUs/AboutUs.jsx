@@ -70,7 +70,7 @@ const AboutUs = () => {
         {/* About, Mission, Vision Cards */}
         <section className=" w-full lg:max-w-[1790px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* Left: About Us (col-6) */}
-          <div className="bg-gray-50 rounded-xl p-8 flex flex-col justify-between shadow-sm h-full px-[50px]">
+          <div className="bg-gray-50 rounded-xl p-8 flex flex-col justify-between shadow-sm h-full lg:px-[50px]">
             <h3 className="text-lg font-semibold mb-2">ABOUT US</h3>
             <p className="text-lg text-gray-700 mb-4">
               At Shaya Lighting, we believe light is more than illumination—it's an experience. We
@@ -80,7 +80,7 @@ const AboutUs = () => {
               craftsmanship, we create efficient, sustainable, and inspiring environments—Lighting
               the Future with Excellence.
             </p>
-            <button className="bg-[#0E4E14]  text-white px-4 py-2 rounded-full text-lg font-semibold  w-[40%]">
+            <button className="bg-[#0E4E14]  text-white px-4 py-2 rounded-full text-lg font-semibold  lg:w-[40%]">
               THE STORY
             </button>
           </div>

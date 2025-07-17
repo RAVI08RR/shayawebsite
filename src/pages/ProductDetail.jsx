@@ -140,7 +140,7 @@ export default function ProductDetail() {
               </svg>
             </button>
             {/* Main Image with Zoom */}
-            <div className="w-[240px] h-[240px] mx-auto">
+            <div className="w-[240px] h-[280px] mx-auto">
               <ReactImageMagnify
                 {...{
                   smallImage: {
@@ -155,7 +155,7 @@ export default function ProductDetail() {
                   },
                   enlargedImageContainerDimensions: {
                     width: '250%', // Increase this to make the zoom box wider
-                    height: '150%',
+                    height: '180%',
                   },
                   enlargedImageContainerStyle: {
                     marginLeft: '220px', // Adjust closer
