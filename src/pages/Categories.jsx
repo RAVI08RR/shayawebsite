@@ -41,9 +41,9 @@ const categories = [
 
 export default function Categories() {
   return (
-    <div className="bg-white min-h-screen w-full lg:max-w-[1790px]  mx-auto px-[56px] pb-16">
+    <div className="bg-white min-h-screen w-full lg:max-w-[1790px]  mx-auto lg:px-[56px] px-[20px] pb-16">
       {/* Breadcrumb */}
-      <nav className="text-sm text-gray-500 px-4 pt-8 max-w-7xl mx-auto">
+      <nav className="text-sm text-gray-500 lg:px-4 pt-8 max-w-7xl mx-auto">
         <ol className="list-reset flex items-center space-x-1">
           <li>
             <a href="/" className="hover:underline">

@@ -6,6 +6,8 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import Categories from './pages/Categories';
 import ProductDetail from './pages/ProductDetail';
+import ProductList from './pages/ProductList';
+import Projects from './pages/Projects';
 
 const AppRoutes = () => (
   <Router>
@@ -14,8 +16,10 @@ const AppRoutes = () => (
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/category/spotlights" element={<Categories />} />
-        <Route path="/products/:category/:product" element={<ProductDetail />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/products/spotlights" element={<Categories />} />
+        <Route path="/products/:category/:subcategory/:product" element={<ProductDetail />} />
+        <Route path="/products/:category/:subcategory" element={<ProductList />} />
         {/* Add other routes here */}
       </Routes>
     </Layout>

@@ -40,7 +40,7 @@ const Header = () => {
         {
           title: 'Spotlights & Downlights',
           items: ['Petit', 'Omado', 'Olev'],
-          link: '/category/spotlights',
+          link: '/products/spotlights',
         },
         {
           title: 'Surface & Modular',
@@ -269,9 +269,11 @@ const Header = () => {
 
             {/* PROJECTS */}
             <div className="relative group">
-              <span className="lg:text-[14px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4">
-                PROJECTS
-              </span>
+              <Link to="/projects">
+                <span className="lg:text-[14px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4">
+                  PRODUCTS
+                </span>
+              </Link>
               {/* Mega Menu for Projects */}
             </div>
 
@@ -342,7 +344,7 @@ const Header = () => {
               {/* Submenu Title */}
               <div className="px-6 pt-2 pb-4">
                 <span className="text-[25px] font-[800] tracking-wide text-[#3C3C3C] uppercase">
-                  Projects
+                  PRODUCTS
                 </span>
               </div>
               <div className="flex-1 overflow-y-auto px-4 pb-4">
@@ -355,12 +357,17 @@ const Header = () => {
                     className="rounded-xl w-full h-50 object-cover mb-2"
                   />
                   <div className="flex flex-col divide-y divide-gray-200">
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
+                    {/* <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800"> */}
+                    <a
+                      className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800"
+                      href="/products/spotlights"
+                    >
                       SPOTLIGHTS & DOWNLIGHTS{' '}
                       <span className="text-2xl">
                         <img src="/images/submenu-arrow.svg" className="arrow-icon" />
                       </span>
-                    </button>
+                    </a>
+                    {/* </button> */}
                     <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
                       SURFACE & MODULAR{' '}
                       <span className="text-2xl">
@@ -455,16 +462,17 @@ const Header = () => {
               {/* Menu Items */}
               <nav className="flex-1 flex flex-col gap-0 px-6">
                 <button className="w-full text-left py-4 border-b border-gray-200 font-bold text-[17px] text-[#3C3C3C] tracking-wide">
-                  HOME
+                  <a href="/">HOME</a>
                 </button>
+
                 <button className="w-full text-left py-4 border-b border-gray-200 font-bold text-[17px] text-[#3C3C3C] tracking-wide">
-                  ABOUT
+                  <a href="/about">ABOUT</a>
                 </button>
                 <button
                   className="w-full text-left py-4 border-b border-gray-200 font-bold text-[17px] text-[#3C3C3C] tracking-wide flex items-center justify-between"
                   onClick={() => setActiveSubMenu('projects')}
                 >
-                  PROJECTS
+                  PRODUCTS
                   <svg
                     className="w-5 h-5 text-gray-500"
                     fill="none"
@@ -475,6 +483,10 @@ const Header = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
+                <button className="w-full text-left py-4 border-b border-gray-200 font-bold text-[17px] text-[#3C3C3C] tracking-wide">
+                  <a href="/projects">PROJECTS</a>
+                </button>
+
                 <button className="w-full text-left py-4 border-b border-gray-200 font-bold text-[17px] text-[#3C3C3C] tracking-wide">
                   BLOG
                 </button>
