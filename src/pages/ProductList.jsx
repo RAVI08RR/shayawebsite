@@ -67,7 +67,7 @@ export default function ProductList() {
                   NEW
                 </span>
               )}
-              <span className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="absolute bottom-4 right-4 opacity-100  lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
                 <Link to={`/products/${category}/${subcategory}/${prod.slug}`}>
                   <button className="bg-green-800 rounded-md p-2">
                     <svg

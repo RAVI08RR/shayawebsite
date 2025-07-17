@@ -97,7 +97,7 @@ export default function Categories() {
                 <span className="absolute bottom-4 left-4 text-gray-400 text-sm font-[400]">
                   {cat.subtitle}
                 </span>
-                <span className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="absolute bottom-4 right-4 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
                   <button className="bg-green-800 rounded-md p-2">
                     <svg
                       width="24"
