@@ -104,7 +104,7 @@ export default function Blog() {
       >
         <div className="relative w-full h-[460px] md:h-[420px] flex items-center px-8 md:px-16">
           <div className="z-10 max-w-[45rem]">
-            <h2 className="text-[white] font-marcellus lg:text-[56px] md:text-4xl lg:leading-[55px] mb-6">
+            <h2 className="text-[white] font-marcellus text-[30px] lg:text-[56px] md:text-4xl lg:leading-[55px] mb-6">
               ELEVATING SPACES WITH
               <br />
               LIGHT AND PURPOSE
