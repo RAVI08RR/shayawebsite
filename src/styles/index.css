@@ -257,3 +257,10 @@ main {
     left: -106px;
   }
 }
+.explore-btn {
+  color: #0e4e14 !important;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

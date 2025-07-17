@@ -278,7 +278,7 @@ const Header = () => {
             </div>
 
             <span className="lg:text-[14px] sm:text-lg font-medium text-text-dark-3 font-lexend">
-              BLOG
+              <Link to="/blog">BLOG</Link>
             </span>
 
             <Button className="lg:text-[14px] bg-button text-white rounded-[22px] px-6 sm:px-7 py-2 text-base sm:text-lg font-medium font-lexend">
@@ -488,7 +488,7 @@ const Header = () => {
                 </button>
 
                 <button className="w-full text-left py-4 border-b border-gray-200 font-bold text-[17px] text-[#3C3C3C] tracking-wide">
-                  BLOG
+                  <a href="/blog">BLOG</a>
                 </button>
                 <button className="w-full text-left py-4 border-b border-gray-200 font-bold text-[17px] text-[#3C3C3C] tracking-wide">
                   CONTACT

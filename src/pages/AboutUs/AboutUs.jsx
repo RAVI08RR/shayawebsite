@@ -11,7 +11,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen md:px-[20px]">
+    <div className="bg-white min-h-screen ">
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-500 px-4 pt-6 max-w-[82rem] mx-auto">
         <ol className="list-reset flex">
@@ -57,7 +57,7 @@ const AboutUs = () => {
           <img
             src="../../images/about-us.png"
             alt="Team meeting"
-            className="rounded-lg w-full h-[600.46px] object-cover"
+            className="rounded-lg w-[90%] h-[600.46px] object-cover"
           />
         </div>
       </section>
@@ -65,7 +65,7 @@ const AboutUs = () => {
       {/* About, Mission, Vision Cards */}
       <section className="max-w-[82rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {/* Left: About Us (col-6) */}
-        <div className="bg-gray-50 rounded-xl p-6 flex flex-col justify-between shadow-sm h-full">
+        <div className="bg-gray-50 rounded-xl p-8 flex flex-col justify-between shadow-sm h-full px-[50px]">
           <h3 className="text-lg font-semibold mb-2">ABOUT US</h3>
           <p className="text-lg text-gray-700 mb-4">
             At Shaya Lighting, we believe light is more than illumination—it's an experience. We
@@ -81,7 +81,7 @@ const AboutUs = () => {
         </div>
         {/* Right: Mission and Vision stacked (col-6) */}
         <div className="lg:mx-3 md:mx-5 grid grid-cols-1 md:grid-cols-2 gap-6 h-full align-middle px-[20px] lg:px-0">
-          <div className="bg-white rounded-xl p-6 flex flex-col items-center border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl p-6 flex flex-col items-center border border-gray-200 shadow-sm justify-center">
             <img src="../../images/mission.svg" className="w-20 h-20 mb-2" alt="Mission" />
             <h3 className="text-lg font-semibold mb-2">MISSION</h3>
             <p className="text-sm text-gray-700 text-center">
@@ -89,7 +89,7 @@ const AboutUs = () => {
               solutions.
             </p>
           </div>
-          <div className="bg-white rounded-xl p-6 flex flex-col items-center border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl p-6 flex flex-col items-center border border-gray-200 shadow-sm justify-center">
             <img src="../../images/vission.svg" className="w-20 h-20 mb-2" alt="Vision" />
             <h3 className="text-lg font-semibold mb-2">VISION</h3>
             <p className="text-sm text-gray-700 text-center">

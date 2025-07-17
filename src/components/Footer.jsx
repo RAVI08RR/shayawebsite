@@ -6,10 +6,11 @@ const Footer = () => {
       <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-start">
         {/* Left: Navigation, Description, Logo */}
         <div>
-          <h2 className="text-[2.2rem] md:text-[2.5rem] lg:text-[2rem] font-marcellus font-normal leading-tight text-text-dark-4 mb-4">
-            Home, Products, Projects,
-            <br />
-            Blog, About, Contact.
+          <h2 className="flex flex-wrap text-[2.2rem] md:text-[2.5rem] lg:text-[2rem] font-marcellus font-normal leading-tight text-text-dark-4 mb-4 w-[80%] gap-2">
+            <a href="/">Home</a>, <a href="/products">Products,</a>{' '}
+            <a href="/projects"> Projects,</a>
+            <a href="/blog"> Blog</a>, <a href="/about">About </a> ,
+            <a href="/contact-us">Contact.</a>
           </h2>
           <p className="text-base md:text-lg font-lexend font-normal text-text-gray-3 mb-8 max-w-lg">
             We are a leading lighting solutions brand, offering a full spectrum of premium lighting
