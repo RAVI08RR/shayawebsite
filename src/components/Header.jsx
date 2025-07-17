@@ -271,7 +271,7 @@ const Header = () => {
             <div className="relative group">
               <Link to="/projects">
                 <span className="lg:text-[14px] sm:text-lg font-medium text-text-dark-3 font-lexend cursor-pointer flex items-center gap-1 py-4">
-                  PRODUCTS
+                  PROJECTS
                 </span>
               </Link>
               {/* Mega Menu for Projects */}
@@ -282,7 +282,7 @@ const Header = () => {
             </span>
 
             <Button className="lg:text-[14px] bg-button text-white rounded-[22px] px-6 sm:px-7 py-2 text-base sm:text-lg font-medium font-lexend">
-              GET A FREE CONSULTATION
+              <a href="/contact-us"> GET A FREE CONSULTATION </a>
             </Button>
           </nav>
 
