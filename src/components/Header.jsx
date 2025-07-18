@@ -8,6 +8,7 @@ const Header = () => {
   const [activeSubMenu, setActiveSubMenu] = useState(null); // null or 'projects'
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const productsMenuRef = useRef(null);
+  const [activeCategory, setActiveCategory] = useState(null); // for mobile category submenu
 
   // Close mega menu on outside click
   useEffect(() => {
@@ -39,71 +40,121 @@ const Header = () => {
       categories: [
         {
           title: 'Spotlights & Downlights',
-          items: ['Petit', 'Omado', 'Olev'],
+          items: [
+            { name: 'Petit', link: '/products/spotlights/petit' },
+            { name: 'Omado', link: '#' },
+            { name: 'Olev', link: '#' },
+          ],
           link: '/products/spotlights',
         },
         {
           title: 'Surface & Modular',
-          items: ['Luere', 'Visesa'],
+          items: [
+            { name: 'Luere', link: '#' },
+            { name: 'Visesa', link: '#' },
+          ],
           link: '/category/surface',
         },
         {
           title: 'Linear Profiles',
-          items: ['Lanky', 'Lerida'],
+          items: [
+            { name: 'Lanky', link: '#' },
+            { name: 'Lerida', link: '#' },
+          ],
         },
         {
           title: 'AC & magnetic track',
-          items: ['Piste', 'Beck'],
+          items: [
+            { name: 'Piste', link: '#' },
+            { name: 'Beck', link: '#' },
+          ],
         },
         {
           title: 'Strip & Neon',
-          items: ['Corda', 'Zahi', 'Ravine'],
+          items: [
+            { name: 'Corda', link: '#' },
+            { name: 'Zahi', link: '#' },
+            { name: 'Ravine', link: '#' },
+          ],
         },
       ],
     },
+
     outdoor: {
       title: 'Outdoor',
       image: '/images/ourdoor-menu.png',
-
       categories: [
         {
           title: 'Street Lighting',
-          items: ['Bollard', 'Inground', 'Spotlights'],
+          items: [
+            { name: 'Bollard', link: '#' },
+            { name: 'Inground', link: '#' },
+            { name: 'Spotlights', link: '#' },
+          ],
           link: '/category/street-lighting',
         },
         {
           title: 'Flood & high mast',
-          items: ['Bollard', 'Inground', 'Spotlights'],
+          items: [
+            { name: 'Bollard', link: '#' },
+            { name: 'Inground', link: '#' },
+            { name: 'Spotlights', link: '#' },
+          ],
         },
         {
           title: 'Landscape lighting',
-          items: ['Bollard', 'Inground', 'Spotlights'],
+          items: [
+            { name: 'Bollard', link: '#' },
+            { name: 'Inground', link: '#' },
+            { name: 'Spotlights', link: '#' },
+          ],
         },
         {
           title: 'Facade & wall lighting',
-          items: ['Bollard', 'Inground', 'Spotlights'],
+          items: [
+            { name: 'Bollard', link: '#' },
+            { name: 'Inground', link: '#' },
+            { name: 'Spotlights', link: '#' },
+          ],
         },
       ],
     },
+
     lightingControls: {
       title: 'Lighting Controls',
       image: '/images/lighting-control-menu.png',
       categories: [
         {
           title: 'Street Lighting',
-          items: ['Bollard', 'Inground', 'Spotlights'],
+          items: [
+            { name: 'Bollard', link: '#' },
+            { name: 'Inground', link: '#' },
+            { name: 'Spotlights', link: '#' },
+          ],
         },
         {
           title: 'Flood & high mast',
-          items: ['Bollard', 'Inground', 'Spotlights'],
+          items: [
+            { name: 'Bollard', link: '#' },
+            { name: 'Inground', link: '#' },
+            { name: 'Spotlights', link: '#' },
+          ],
         },
         {
           title: 'Landscape lighting',
-          items: ['Bollard', 'Inground', 'Spotlights'],
+          items: [
+            { name: 'Bollard', link: '#' },
+            { name: 'Inground', link: '#' },
+            { name: 'Spotlights', link: '#' },
+          ],
         },
         {
           title: 'Facade & wall lighting',
-          items: ['Bollard', 'Inground', 'Spotlights'],
+          items: [
+            { name: 'Bollard', link: '#' },
+            { name: 'Inground', link: '#' },
+            { name: 'Spotlights', link: '#' },
+          ],
         },
       ],
     },
@@ -171,7 +222,7 @@ const Header = () => {
                           <div className="flex flex-row gap-x-12 flex-1 mt-[2rem]">
                             {megaMenuData.indoor.categories.map((category, index) => (
                               <div key={index}>
-                                <a href={category.link} className="cursor-pointer">
+                                <a href={category.link || '#'} className="cursor-pointer">
                                   <h4 className="font-semibold text-gray-900 mb-2 text-base">
                                     {category.title}
                                   </h4>
@@ -180,10 +231,10 @@ const Header = () => {
                                   {category.items.map((item, itemIndex) => (
                                     <li key={itemIndex}>
                                       <a
-                                        href="#"
+                                        href={item.link}
                                         className="text-gray-700 hover:text-gray-900 text-sm"
                                       >
-                                        {item}
+                                        {item.name}
                                       </a>
                                     </li>
                                   ))}
@@ -207,17 +258,25 @@ const Header = () => {
                           <div className="flex flex-row gap-x-12 flex-1 mt-[2rem]">
                             {megaMenuData.outdoor.categories.map((category, index) => (
                               <div key={index}>
-                                <h4 className="font-semibold text-gray-900 mb-2 text-base">
-                                  {category.title}
-                                </h4>
+                                {category.link ? (
+                                  <a href={category.link} className="cursor-pointer">
+                                    <h4 className="font-semibold text-gray-900 mb-2 text-base">
+                                      {category.title}
+                                    </h4>
+                                  </a>
+                                ) : (
+                                  <h4 className="font-semibold text-gray-900 mb-2 text-base">
+                                    {category.title}
+                                  </h4>
+                                )}
                                 <ul className="space-y-1">
                                   {category.items.map((item, itemIndex) => (
                                     <li key={itemIndex}>
                                       <a
-                                        href="#"
+                                        href={item.link}
                                         className="text-gray-700 hover:text-gray-900 text-sm"
                                       >
-                                        {item}
+                                        {item.name}
                                       </a>
                                     </li>
                                   ))}
@@ -241,17 +300,25 @@ const Header = () => {
                           <div className="flex flex-row gap-x-12 flex-1 mt-[2rem]">
                             {megaMenuData.lightingControls.categories.map((category, index) => (
                               <div key={index}>
-                                <h4 className="font-semibold text-gray-900 mb-2 text-base">
-                                  {category.title}
-                                </h4>
+                                {category.link ? (
+                                  <a href={category.link} className="cursor-pointer">
+                                    <h4 className="font-semibold text-gray-900 mb-2 text-base">
+                                      {category.title}
+                                    </h4>
+                                  </a>
+                                ) : (
+                                  <h4 className="font-semibold text-gray-900 mb-2 text-base">
+                                    {category.title}
+                                  </h4>
+                                )}
                                 <ul className="space-y-1">
                                   {category.items.map((item, itemIndex) => (
                                     <li key={itemIndex}>
                                       <a
-                                        href="#"
+                                        href={item.link}
                                         className="text-gray-700 hover:text-gray-900 text-sm"
                                       >
-                                        {item}
+                                        {item.name}
                                       </a>
                                     </li>
                                   ))}
@@ -312,7 +379,23 @@ const Header = () => {
               alt="Shaya Lighting Logo"
               className="w-[120px] h-auto"
             />
-            {activeSubMenu ? (
+            {activeCategory ? (
+              <button
+                className="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-lg text-2xl text-black ml-2"
+                onClick={() => setActiveCategory(null)}
+                aria-label="Back to categories"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+            ) : activeSubMenu ? (
               <button
                 className="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-lg text-2xl text-black ml-2"
                 onClick={() => setActiveSubMenu(null)}
@@ -338,8 +421,39 @@ const Header = () => {
               </button>
             )}
           </div>
-
-          {activeSubMenu === 'projects' ? (
+          {/* Category submenu (e.g., Spotlights & Downlights) */}
+          {activeCategory ? (
+            <div className="flex flex-col h-full w-full">
+              <div className="flex items-center gap-2 px-6 pt-2 pb-4">
+                <span className="text-[25px] font-[800] tracking-wide text-[#3C3C3C] uppercase flex-1 text-center">
+                  {activeCategory.title}
+                </span>
+              </div>
+              <div className="flex-1 overflow-y-auto px-0 pb-4">
+                <ul className="divide-y divide-gray-200">
+                  {activeCategory.items.map((item, idx) => (
+                    <li key={idx}>
+                      <a
+                        href={item.link}
+                        className="flex justify-between items-center px-6 py-5 font-bold text-[17px] text-[#222] hover:bg-gray-50"
+                      >
+                        <span className="uppercase tracking-wide">{item.name}</span>
+                        <svg
+                          className="w-5 h-5 text-gray-500"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : activeSubMenu === 'projects' ? (
             <div className="flex flex-col h-full w-full">
               {/* Submenu Title */}
               <div className="px-6 pt-2 pb-4">
@@ -357,45 +471,18 @@ const Header = () => {
                     className="rounded-xl w-full h-50 object-cover mb-2"
                   />
                   <div className="flex flex-col divide-y divide-gray-200">
-                    {/* <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800"> */}
-                    <a
-                      className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800"
-                      href="/products/spotlights"
-                    >
-                      SPOTLIGHTS & DOWNLIGHTS{' '}
-                      <span className="text-2xl">
-                        <img src="/images/submenu-arrow.svg" className="arrow-icon" />
-                      </span>
-                    </a>
-                    {/* </button> */}
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      SURFACE & MODULAR{' '}
-                      <span className="text-2xl">
-                        {' '}
-                        <img src="/images/submenu-arrow.svg" className="arrow-icon" />
-                      </span>
-                    </button>
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      LINEAR PROFILES{' '}
-                      <span className="text-2xl">
-                        {' '}
-                        <img src="/images/submenu-arrow.svg" className="arrow-icon" />
-                      </span>
-                    </button>
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      AC & MAGNETIC TRACK{' '}
-                      <span className="text-2xl">
-                        {' '}
-                        <img src="/images/submenu-arrow.svg" className="arrow-icon" />
-                      </span>
-                    </button>
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      STRIP & NEON{' '}
-                      <span className="text-2xl">
-                        {' '}
-                        <img src="/images/submenu-arrow.svg" className="arrow-icon" />
-                      </span>
-                    </button>
+                    {megaMenuData.indoor.categories.map((category, idx) => (
+                      <button
+                        key={idx}
+                        className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800"
+                        onClick={() => setActiveCategory(category)}
+                      >
+                        {category.title.toUpperCase()}
+                        <span className="text-2xl">
+                          <img src="/images/submenu-arrow.svg" className="arrow-icon" />
+                        </span>
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -408,18 +495,18 @@ const Header = () => {
                     className="rounded-xl w-full h-50 object-cover mb-2"
                   />
                   <div className="flex flex-col divide-y divide-gray-200">
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      STREET LIGHTING
-                    </button>
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      FLOOD & HIGH MAST
-                    </button>
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      LANDSCAPE LIGHTING
-                    </button>
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      FACADE & WALL LIGHTING
-                    </button>
+                    {megaMenuData.outdoor.categories.map((category, idx) => (
+                      <button
+                        key={idx}
+                        className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800"
+                        onClick={() => setActiveCategory(category)}
+                      >
+                        {category.title.toUpperCase()}
+                        <span className="text-2xl">
+                          <img src="/images/submenu-arrow.svg" className="arrow-icon" />
+                        </span>
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -434,18 +521,18 @@ const Header = () => {
                     className="rounded-xl w-full h-50 object-cover mb-2"
                   />
                   <div className="flex flex-col divide-y divide-gray-200">
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      STREET LIGHTING
-                    </button>
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      FLOOD & HIGH MAST
-                    </button>
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      LANDSCAPE LIGHTING
-                    </button>
-                    <button className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800">
-                      FACADE & WALL LIGHTING
-                    </button>
+                    {megaMenuData.lightingControls.categories.map((category, idx) => (
+                      <button
+                        key={idx}
+                        className="py-4 flex justify-between items-center font-bold text-[17px] text-gray-800"
+                        onClick={() => setActiveCategory(category)}
+                      >
+                        {category.title.toUpperCase()}
+                        <span className="text-2xl">
+                          <img src="/images/submenu-arrow.svg" className="arrow-icon" />
+                        </span>
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>

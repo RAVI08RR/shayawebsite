@@ -105,43 +105,45 @@ const AboutUs = () => {
         </section>
 
         {/* Story Behind the Brand */}
-        <section className=" w-full lg:max-w-[1790px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {/* Left: Text */}
-          <div className="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-center">
-            <h2 className="text-2xl sm:text-3xl font-marcellus text-center md:text-left mb-8">
-              The story behind the brand
-            </h2>
-            <p className="text-gray-700 text-base mb-4">
-              Shaya Lighting was founded on a simple idea: light should inspire and transform, not
-              just illuminate. From the start, our mission has been to combine advanced technology
-              with timeless design, creating lighting solutions that are efficient, sustainable, and
-              beautifully crafted.
-            </p>
-            <p className="text-gray-700 text-base">
-              Driven by a passion for innovation, we've built a diverse portfolio ranging from
-              elegant indoor fixtures to high-performance outdoor systems—all engineered with
-              meticulous attention to detail.
-              <br />
-              <br />
-              Today, Shaya Lighting is a trusted partner to architects, designers, and visionaries
-              worldwide, united by a commitment to redefine how light shapes experience.
-            </p>
-          </div>
-          {/* Right: Images stacked */}
-          <div
-            className="flex flex-col gap-4 justify-center md:m-6"
-            style={{ flexDirection: 'row', alignItems: 'center' }}
-          >
-            <img
-              src="../../images/our-story.png"
-              alt="Sketch"
-              className="rounded-lg object-cover w-full h-32 md:h-1/2"
-            />
-            <img
-              src="../../images/story-2.png"
-              alt="Team"
-              className="rounded-lg object-cover w-full h-32 md:h-1/2"
-            />
+        <section className="w-full lg:max-w-[1790px] mx-auto px-0 md:px-8 lg:px-0 py-16 md:py-20">
+          <h2 className="text-4xl md:text-5xl font-marcellus text-center mb-6 md:mb-8">
+            The story behind the brand
+          </h2>
+          <div className="w-full border-t border-gray-200 mb-10"></div>
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start justify-between">
+            {/* Left: Text */}
+            <div className="flex-1 lg:max-w-xl text-left px-4 md:px-0">
+              <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                Shaya Lighting was founded on a simple idea: light should inspire and transform, not
+                just illuminate. From the start, our mission has been to combine advanced technology
+                with timeless design, creating lighting solutions that are efficient, sustainable,
+                and beautifully crafted.
+              </p>
+              <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                Driven by a passion for innovation, we’ve built a diverse portfolio ranging from
+                elegant indoor fixtures to high-performance outdoor systems—all engineered with
+                meticulous attention to detail.
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Today, Shaya Lighting is a trusted partner to architects, designers, and visionaries
+                worldwide, united by a commitment to redefine how light shapes experience.
+              </p>
+            </div>
+            {/* Right: Images side by side */}
+            <div className="flex-1 flex flex-row gap-6 justify-center items-center px-4 md:px-0">
+              <img
+                src="../../images/our-story.png"
+                alt="Sketch"
+                className="rounded-2xl object-cover w-1/2 h-[260px] md:h-[320px] max-w-[220px] bg-gray-100"
+                style={{ minWidth: '140px' }}
+              />
+              <img
+                src="../../images/story-2.png"
+                alt="Team"
+                className="rounded-2xl object-cover w-1/2 h-[260px] md:h-[320px] max-w-[620px] bg-gray-100"
+                style={{ minWidth: '440px' }}
+              />
+            </div>
           </div>
         </section>
 
@@ -178,43 +180,43 @@ const AboutUs = () => {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {/* Team Member 1 */}
-            <div className="flex flex-col items-center  rounded-2xl p-4 ">
+            <div className="flex flex-col items-start rounded-2xl p-4 ">
               <img
                 src="../../images/Marcus_Hundnes.png"
                 alt="Marcus Hundsnes"
                 className="rounded-xl w-full h-70 object-cover mb-4"
               />
-              <span className="font-semibold text-green-900 text-lg">Marcus Hundsnes</span>
+              <span className="font-semibold text-green-900 text-[24px]">Marcus Hundsnes</span>
               <span className="text-xs text-gray-700 mt-1">CEO</span>
             </div>
             {/* Team Member 2 */}
-            <div className="flex flex-col items-center  rounded-2xl p-4 ">
+            <div className="flex flex-col items-start  rounded-2xl p-4 ">
               <img
                 src="../../images/Maria_Shevtsova.png"
                 alt="Maria Shevtsova"
                 className="rounded-xl w-full h-70 object-cover mb-4"
               />
-              <span className="font-semibold text-green-900 text-lg">Maria Shevtsova</span>
+              <span className="font-semibold text-green-900 text-[24px]">Maria Shevtsova</span>
               <span className="text-xs text-gray-700 mt-1">CHIEF CREATIVE OFFICER</span>
             </div>
             {/* Team Member 3 */}
-            <div className="flex flex-col items-center rounded-2xl p-4 ">
+            <div className="flex flex-col items-start rounded-2xl p-4 ">
               <img
                 src="../../images/Louis_Holder.png"
                 alt="Louis Holder"
                 className="rounded-xl w-full h-70 object-cover mb-4"
               />
-              <span className="font-semibold text-green-900 text-lg">Louis Holder</span>
+              <span className="font-semibold text-green-900 text-[24px]">Louis Holder</span>
               <span className="text-xs text-gray-700 mt-1">HEAD OF POST / POST PRODUCER</span>
             </div>
             {/* Team Member 4 */}
-            <div className="flex flex-col items-center  rounded-2xl p-4 ">
+            <div className="flex flex-col items-start  rounded-2xl p-4  ">
               <img
                 src="../../images/Sarah_Winstanley.png"
                 alt="Sarah Winstanley"
                 className="rounded-xl w-full h-70 object-cover mb-4"
               />
-              <span className="font-semibold text-green-900 text-lg">Sarah Winstanley</span>
+              <span className="font-semibold text-green-900 text-[24px]">Sarah Winstanley</span>
               <span className="text-xs text-gray-700 mt-1">HEAD OF ORIGINALS / HR</span>
             </div>
           </div>
