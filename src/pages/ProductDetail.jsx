@@ -90,7 +90,7 @@ export default function ProductDetail() {
     <div className="bg-white min-h-screen w-full lg:max-w-[1790px] mx-auto lg:px-[56px] px-[20px] pb-16">
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-500 pt-8 mb-4">
-        <ol className="list-reset flex items-center space-x-1">
+        <ol className="list-reset flex items-center space-x-1  flex-wrap">
           <li>
             <a href="/" className="hover:underline">
               Home
@@ -410,9 +410,9 @@ export default function ProductDetail() {
                   <img
                     src={prod.image || '/images/petit.png'}
                     alt={prod.name}
-                    className="w-[100px] h-[100px] object-contain mb-6"
+                    className="w-[200px] h-[200px] object-contain mb-6"
                   />
-                  <span className="font-marcellus text-lg text-black mt-auto mb-2 text-left flex justify-start">
+                  <span className="font-marcellus text-lg text-black mt-auto mb-2 text-left flex justify-start ml-[-77px]">
                     {prod.name}
                   </span>
                 </div>
@@ -460,7 +460,7 @@ export default function ProductDetail() {
               <img
                 src={prod.image || '/images/petit.png'}
                 alt={prod.name}
-                className="w-[80px] h-[80px] md:w-[140px] md:h-[140px] object-contain mb-4 md:mb-6"
+                className="w-[200px] h-[200px] md:w-[140px] md:h-[140px] object-contain mb-4 md:mb-6"
               />
               <div className="w-full flex flex-col items-start">
                 <span className="font-semibold text-base md:text-lg text-green-800 mb-1 text-left">
