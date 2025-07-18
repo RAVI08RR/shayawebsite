@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactImageMagnify from 'react-image-magnify';
 import { allProducts } from '../data/products';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { useRef } from 'react';
 
 // Static product data for all detail pages
 const staticProduct = {
@@ -73,9 +78,13 @@ export default function ProductDetail() {
     '/images/s-lumi-46-1.png',
   ];
   const [currentImage, setCurrentImage] = useState(1); // default to second image as in screenshot
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   const prevImage = () => setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   const nextImage = () => setCurrentImage((prev) => (prev + 1) % images.length);
+
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   return (
     <div className="bg-white min-h-screen w-full lg:max-w-[1790px] mx-auto lg:px-[56px] px-[20px] pb-16">
@@ -121,7 +130,7 @@ export default function ProductDetail() {
       {/* Main Product Section */}
       <div className="flex flex-col lg:flex-row gap-10 mb-10">
         {/* Image Slider/Carousel */}
-        <div className="bg-white border rounded-xl p-8 flex-1 flex flex-col items-center min-w-[400px] max-w-[600px]">
+        <div className="bg-white border rounded-xl p-8 flex-1 flex flex-col items-center min-w-[200px] max-w-[600px]">
           <div className="relative w-full flex items-center justify-center">
             {/* Left Arrow */}
             <button
@@ -139,39 +148,46 @@ export default function ProductDetail() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            {/* Main Image with Zoom */}
-            <div className="w-[240px] h-[280px] mx-auto">
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: staticProduct.product.name,
-                    isFluidWidth: true,
-                    src: images[currentImage],
-                  },
-                  largeImage: {
-                    src: images[currentImage],
-                    width: 1000,
-                    height: 1000,
-                  },
-                  enlargedImageContainerDimensions: {
-                    width: '250%', // Increase this to make the zoom box wider
-                    height: '180%',
-                  },
-                  enlargedImageContainerStyle: {
-                    marginLeft: '220px', // Adjust closer
-                    marginTop: '-2rem',
-                    borderRadius: '12px', // 👈 Rounded corners
-                    overflow: 'hidden', // 👈 Ensures zoom image respects border radius
-                    backgroundColor: '#f5f5f5',
-                  },
-                  lensStyle: {
-                    backgroundColor: 'rgba(0,0,0,.1)',
-                    border: '1px solid #ccc',
-                  },
-                }}
-              />
+            {/* Main Image: Zoom on desktop, static on mobile */}
+            <div className="w-[180px] h-[180px] md:w-[240px] md:h-[280px] mx-auto">
+              {typeof window !== 'undefined' && window.innerWidth < 768 ? (
+                <img
+                  src={images[currentImage]}
+                  alt={staticProduct.product.name}
+                  className="w-full h-full object-contain rounded-xl"
+                />
+              ) : (
+                <ReactImageMagnify
+                  {...{
+                    smallImage: {
+                      alt: staticProduct.product.name,
+                      isFluidWidth: true,
+                      src: images[currentImage],
+                    },
+                    largeImage: {
+                      src: images[currentImage],
+                      width: 1000,
+                      height: 1000,
+                    },
+                    enlargedImageContainerDimensions: {
+                      width: '250%',
+                      height: '180%',
+                    },
+                    enlargedImageContainerStyle: {
+                      marginLeft: '220px',
+                      marginTop: '-2rem',
+                      borderRadius: '12px',
+                      overflow: 'hidden',
+                      backgroundColor: '#f5f5f5',
+                    },
+                    lensStyle: {
+                      backgroundColor: 'rgba(0,0,0,.1)',
+                      border: '1px solid #ccc',
+                    },
+                  }}
+                />
+              )}
             </div>
-
             {/* Right Arrow */}
             <button
               onClick={nextImage}
@@ -195,10 +211,10 @@ export default function ProductDetail() {
               <button
                 key={idx}
                 onClick={() => setCurrentImage(idx)}
-                className={`w-14 h-14 rounded-lg border-2 ${currentImage === idx ? 'border-green-700 bg-white' : 'border-transparent bg-gray-100'} flex items-center justify-center transition-all`}
+                className={`w-10 h-10 md:w-14 md:h-14 rounded-lg border-2 ${currentImage === idx ? 'border-green-700 bg-white' : 'border-transparent bg-gray-100'} flex items-center justify-center transition-all`}
                 aria-label={`Show image ${idx + 1}`}
               >
-                <img src={img} alt="" className="w-10 h-10 object-contain" />
+                <img src={img} alt="" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
               </button>
             ))}
           </div>
@@ -251,10 +267,57 @@ export default function ProductDetail() {
         </div>
       </div>
 
-      {/* Product Specifications Table */}
+      {/* Product Specifications Table/Card */}
       <div className="mb-12">
         <h3 className="font-semibold text-lg text-center mb-6">PRODUCT SPECIFICATIONS</h3>
-        <div className="overflow-x-auto">
+        {/* Mobile: Card style, Desktop: Table */}
+        <div className="block md:hidden space-y-4">
+          {staticProduct.product_specifications.map((spec, idx) => (
+            <div key={idx} className="rounded-xl border border-gray-200 bg-[#F8FBFC] p-4 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="font-semibold text-gray-700">ID:</span>
+                <span className="font-marcellus text-base">{spec.id}</span>
+              </div>
+              <div className="mb-1">
+                <span className="font-semibold">Wattage</span>:{' '}
+                <span className="text-gray-700">{spec.voltage}</span>
+              </div>
+              <div className="mb-1">
+                <span className="font-semibold">Dimension</span>:{' '}
+                <span className="text-gray-700">{spec.dimensions}</span>
+              </div>
+              <div className="mb-1">
+                <span className="font-semibold">IES</span>:<br />
+                <span className="text-gray-700 whitespace-pre-line">{spec.ies}</span>
+              </div>
+              <div className="mb-1">
+                <span className="font-semibold">Photometry</span>:<br />
+                <span className="text-gray-700 whitespace-pre-line">{spec.photometry}</span>
+              </div>
+              <div className="mt-2 flex items-center gap-2">
+                <span className="font-semibold">Technical Datasheet</span>:
+                <a href="#" className="text-green-700 underline flex items-center gap-1" download>
+                  {spec.technical_datasheet}
+                  <svg
+                    width={18}
+                    height={18}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 11l5 5 5-5M12 4v12"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="hidden md:block overflow-x-auto">
           <table className="min-w-full text-sm border-separate border-spacing-0">
             <thead>
               <tr className="bg-[#F5F5F5]">
@@ -323,26 +386,90 @@ export default function ProductDetail() {
 
       {/* Related Products */}
       <div>
-        <h3 className="font-semibold text-lg text-center mb-6">RELATED PRODUCTS</h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-[80rem] mx-auto">
+        <h3 className="font-marcellus font-normal text-3xl text-center mb-6 mt-10">
+          RELATED PRODUCTS
+        </h3>
+        {/* Mobile: Swiper carousel, Desktop: grid */}
+        <div className="block md:hidden relative">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={16}
+            slidesPerView={2}
+            navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+            onInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }}
+            className="pb-8"
+          >
+            {staticProduct.related_products.map((prod, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="flex flex-col items-center border border-gray-200 rounded-2xl p-6 min-h-[260px] relative bg-white">
+                  <img
+                    src={prod.image || '/images/petit.png'}
+                    alt={prod.name}
+                    className="w-[100px] h-[100px] object-contain mb-6"
+                  />
+                  <span className="font-marcellus text-lg text-black mt-auto mb-2 text-left flex justify-start">
+                    {prod.name}
+                  </span>
+                </div>
+              </SwiperSlide>
+            ))}
+            {/* Custom Arrows */}
+            <button
+              ref={prevRef}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-24 flex items-center justify-center bg-transparent border-none p-0"
+              style={{ outline: 'none' }}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              ref={nextRef}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-24 flex items-center justify-center bg-transparent border-none p-0"
+              style={{ outline: 'none' }}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </Swiper>
+        </div>
+        <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 max-w-[80rem] mx-auto">
           {staticProduct.related_products.map((prod, idx) => (
             <div
               key={idx}
-              className="group bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center relative min-h-[300px] "
+              className="group bg-white border border-gray-200 rounded-xl p-4 md:p-6 flex flex-col items-center relative min-h-[180px] md:min-h-[300px] transition-shadow hover:shadow-md"
             >
               <img
                 src={prod.image || '/images/petit.png'}
                 alt={prod.name}
-                className="w-[140px] h-[140px] object-contain mb-6"
+                className="w-[80px] h-[80px] md:w-[140px] md:h-[140px] object-contain mb-4 md:mb-6"
               />
               <div className="w-full flex flex-col items-start">
-                <span className="absolute bottom-10 left-4 font-semibold text-lg text-green-800 mb-1">
+                <span className="font-semibold text-base md:text-lg text-green-800 mb-1 text-left">
                   {prod.name}
                 </span>
-                <span className="absolute bottom-4 left-4 text-gray-400 text-sm font-[400]">
+                <span className="text-gray-400 text-xs md:text-sm font-[400] mb-2">
                   {prod.type}
                 </span>
-                <span className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="absolute bottom-4 right-4 lg:opacity-0 opacity-100 lg:transition-opacity lg:group-hover:opacity-100 transition-opacity">
                   <button className="bg-green-800 rounded-md p-2">
                     <svg
                       width="24"
